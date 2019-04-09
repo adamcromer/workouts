@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import Nav from "./components/Nav";
 import Body from "./components/Body";
 import './App.css';
+import Nav from './components/Nav';
+import Title from './components/Title';
+import About from './components/About';
+import Body from './components/Body';
 
 class App extends Component {
   state = {
