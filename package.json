@@ -1,5 +1,5 @@
 {
-  "name": "mern",
+  "name": "workouts",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -8,7 +8,6 @@
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd client && npm run start",
-    "seed": "node scripts/seedDB.js",
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
@@ -17,12 +16,12 @@
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^4.1.0",
-    "nodemon": "^1.18.7"
+    "nodemon": "^1.18.11"
   },
   "dependencies": {
-    "axios": "^0.18.0",
-    "express": "^4.16.3",
-    "mongoose": "^5.3.16",
-    "if-env": "^1.0.4"
+    "express": "^4.16.4",
+    "if-env": "^1.0.4",
+    "mongoose": "^5.5.0",
+    "path": "^0.12.7"
   }
 }
