@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import Button from 'react-bootstrap/Button';
 
 class UserInfo extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            username
+            username: "Username"
         }
     }
 
@@ -13,10 +14,10 @@ class UserInfo extends Component {
         return ( 
 
             <div>
-                <Link to={`/${this.state.username}`}>
-                    <h2>{this.state.username}</h2>
-                </Link>
-                <Button href="/logout" variant="danger">Logout</Button>
+                <a href={`/${this.state.username}`}>
+                    <strong>{this.state.username}</strong>
+                </a>
+                &nbsp;<Button href="/logout" variant="danger">Logout</Button>
             </div>
 
         )
