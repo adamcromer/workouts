@@ -8,7 +8,9 @@ class List extends React.Component {
 
             <div className = "list">
                 <h1>List</h1>
+                
             </div>
+            
         );
     }
 }

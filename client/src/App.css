@@ -32,6 +32,11 @@
   }
 } */
 
-.signup {
-  padding-top: 1em;
+a {
+  color: yellow;
 }
+
+.title {
+  color: white;
+}
+

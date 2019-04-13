@@ -4,8 +4,13 @@ import View from "../components/View";
 
 import Container from 'react-bootstrap/Container';
 import Table from 'react-bootstrap/Table'
+import ReactCountdownClock from 'react-countdown-clock';
+import Form from 'react-bootstrap/Form';
+import ExerciseForm from '../components/ExerciseForm';
+
 
 class Workout extends Component {
+
 
     render() {
         return (
@@ -39,6 +44,8 @@ class Workout extends Component {
                         </tr>
                     </tbody>
                 </Table>
+             < ReactCountdownClock />
+             <ExerciseForm />
             </div>
         );
     }

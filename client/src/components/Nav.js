@@ -19,7 +19,7 @@ class Nav extends Component {
   render() {
     return (
 
-      <Navbar bg="light" expand="lg">
+      <Navbar bg="dark" expand="lg">
         <Container>
           <Navbar.Brand href="#home">Workouts</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
