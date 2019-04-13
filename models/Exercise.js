@@ -7,6 +7,16 @@ const exerciseSchema = new Schema({
         required: true,
         trim: true
     }, 
+    createdBy: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    popularity: {
+        type: Number,
+        trim: true,
+        default: 0
+    },
     description: {
         type: String, 
         required: true,
