@@ -7,8 +7,8 @@ export default {
     getAllWorkouts: function() {
         return axios.get('/api/workouts');
     },
-    findUser: function(userData) {
-        return axios.get('/api/user', { params: { userData: userData } });
+    findUser: function(userEmail) {
+        return axios.get('/api/user/' + userEmail);
     },
     saveExercise: function(exerciseData) {
         return axios.post('/api/exercises', exerciseData);

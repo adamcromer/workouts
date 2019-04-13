@@ -5,35 +5,63 @@ import API from "../utils/API";
 
 class Login extends React.Component {
     state = {
+        validated: false,
+        user: [],
         email: "",
-        password: ""
+        password: "",
+        isAuth: false
     }
 
-    handleFormSubmit = (event) => {
+    handleInputChange = event => {
+        const { name, value } = event.target;
+        this.setState({
+            [name]: value
+        });
+    }
+
+    handleSubmit = event => {
         event.preventDefault();
-        API.findUser()
+        const form = event.currentTarget;
+        if (form.checkValidity() === false) {
+            event.stopPropagation();
+        }
+        this.setState({ validated: true }, this.validateUser());
+    }
+
+    validateUser = () => {
+
+        API.findUser(this.state.email)
             .then(res =>
                 this.setState({
-                    email: res.email,
-                    password: res.password
+                    user: res.data
                 })
             )
+            .then(() => {
+                console.log(this.state.user[0].password, this.state.password)
+                if (this.state.user[0].password === this.state.password) {
+                    console.log("Password Match");
+                    this.setState({
+                        isAuth: true
+                    });
+                } else {
+                    console.log("Password Incorrect")
+                }
+            })
             .catch(() =>
                 this.setState({
-                    email: [],
-                    message: "No email found"
+                    user: [],
+                    message: "No user found"
                 })
             );
-    console.log(this.state.email, this.state.password);
     }
 
     render() {
         return (
 
-            <Form>
+            <Form onChange={this.handleInputChange}>
                 <Form.Group controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email" email={this.state.email} />
+                    <Form.Control type="email" name="email" placeholder="Enter email" />
                     <Form.Text className="text-muted">
                         We'll never share your email with anyone else.
                     </Form.Text>
@@ -41,9 +69,9 @@ class Login extends React.Component {
 
                 <Form.Group controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" placeholder="Password" password={this.state.password} />
+                    <Form.Control type="password" name="password" placeholder="Password" />
                 </Form.Group>
-                <Button variant="primary" type="submit" onClick={this.handleFormSubmit}>
+                <Button variant="primary" type="submit" onClick={this.handleSubmit}>
                     Submit
                 </Button>
             </Form>

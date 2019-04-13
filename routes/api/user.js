@@ -4,8 +4,8 @@ const userController = require('../../controllers/userController');
 router.route('/')
     .post(userController.create);
 
-router.route('/:id')
-    .get(userController.findById)
+router.route('/:email')
+    .get(userController.findByEmail)
     .put(userController.update)
     .delete(userController.remove);
 
