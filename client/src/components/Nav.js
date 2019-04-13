@@ -4,7 +4,7 @@ import LoginButtons from './LoginButtons';
 import UserInfo from './UserInfo';
 
 import Navbar from 'react-bootstrap/Navbar';
-import Container from 'react-bootstrap/Container'
+import Container from 'react-bootstrap/Container';
 
 class Nav extends Component {
 
