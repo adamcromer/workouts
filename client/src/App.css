@@ -31,6 +31,7 @@
     transform: rotate(360deg);
   }
 } */
+
 a {
   color: yellow;
 }
@@ -38,3 +39,4 @@ a {
 .title {
   color: white;
 }
+
