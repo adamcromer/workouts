@@ -1,8 +1,17 @@
-import React from "react";
+import React from 'react';
 
+import Container from 'react-bootstrap/Container';
 
 function Body(props) {
-    return <div className ="container">{props.children}</div>;
+    return (
+
+        <div>
+            <Container>
+                {props.children}
+            </Container>
+        </div>
+
+    );
 }
 
 export default Body;

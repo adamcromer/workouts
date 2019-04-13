@@ -31,3 +31,10 @@
     transform: rotate(360deg);
   }
 } */
+a {
+  color: yellow;
+}
+
+.title {
+  color: white;
+}

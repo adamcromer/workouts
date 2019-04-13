@@ -17,7 +17,7 @@ class UserInfo extends Component {
                 <a href={`/${this.state.username}`}>
                     <strong>{this.state.username}</strong>
                 </a>
-                &nbsp;<Button href="/logout" variant="danger">Logout</Button>
+                &nbsp;<Button href="/logout" variant="warning">Logout</Button>
             </div>
 
         )
