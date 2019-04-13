@@ -7,6 +7,21 @@ const workoutSchema = new Schema({
         required: true,
         trim: true
     },
+    createdBy: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    tags: [{
+        type: String,
+        required: true,
+        trim: true
+    }],
+    target: [{
+        type: String,
+        required: true,
+        trim: true
+    }],
     difficulty: {
         type: Number,
         trim: true
@@ -14,6 +29,11 @@ const workoutSchema = new Schema({
     duration: {
         type: Number,
         trim: true
+    },
+    popularity: {
+        type: Number,
+        trim: true,
+        default: 0
     },
     exercises: [{
         type: Schema.Types.ObjectId,
