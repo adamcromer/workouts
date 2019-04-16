@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
 
-import API from '../utils/API';
-
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+
+import API from '../utils/API';
 
 class SignUp extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            isAuth: false,
             validated: false,
             username: '',
             email: '',
@@ -19,34 +18,31 @@ class SignUp extends Component {
         }
     }
 
-    componentDidMount() {
-        console.log(this.state);
-    }
-
     handleInputChange = event => {
         const { name, value } = event.target;
         this.setState({
             [name]: value
-        }, console.log(this.state));
-    };
+        });
+    }
 
     handleSubmit = event => {
         event.preventDefault();
         const form = event.currentTarget;
         if (form.checkValidity() === false) {
-            event.preventDefault();
             event.stopPropagation();
         }
         this.setState({ validated: true }, this.registerUser());
     }
 
     registerUser = () => {
-        console.log('register user function');
         API.saveUser({
             username: this.state.username,
             email: this.state.email,
             password: this.state.password
         })
+        .then(
+            this.props.history.replace('/login')
+        )
     }
 
     render() {
@@ -94,9 +90,7 @@ class SignUp extends Component {
                                 required />
                         </Form.Group>
 
-                        <Button 
-                        variant="dark" 
-                        type="submit">
+                        <Button variant="dark" type="submit">
                             Sign Up
                         </Button>
                     </Form>
