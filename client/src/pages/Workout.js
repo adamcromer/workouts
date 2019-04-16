@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
+import Sidebar from "../components/Sidebar";
 import List from "../components/List";
 import View from "../components/View";
-
 import Container from 'react-bootstrap/Container';
-import Table from 'react-bootstrap/Table'
-import ReactCountdownClock from 'react-countdown-clock';
-import Form from 'react-bootstrap/Form';
 import ExerciseForm from '../components/ExerciseForm';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 
 
 class Workout extends Component {
@@ -14,39 +13,22 @@ class Workout extends Component {
 
     render() {
         return (
-
+            <Container>
             <div className="Workout">
-                <h3>Create a Workout.</h3>
-                <List />
-                <View />
-
-                <Table striped bordered hover variant="dark">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Username</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                    </tbody>
-                </Table>
-             < ReactCountdownClock />
-             <ExerciseForm />
+                <h3>Create a Workout</h3>
+                
+                <Row>
+                    <Col md={4}>
+                        <Sidebar/>
+                    </Col>
+                    <Col md={8}>
+                        <ExerciseForm />
+                        <List />
+                        <View />   
+                    </Col>
+                </Row>
             </div>
+            </Container>
         );
     }
 }

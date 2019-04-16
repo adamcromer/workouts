@@ -5,7 +5,6 @@ import About from "./pages/About";
 import Workout from "./pages/Workout";
 import Error from "./pages/Error";
 import Nav from "./components/Nav";
-import './App.css';
 
 class App extends Component {
   state = {
