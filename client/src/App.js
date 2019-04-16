@@ -6,6 +6,7 @@ import Login from "./pages/Login";
 import Workout from "./pages/Workout";
 import Error from "./pages/Error";
 import Nav from "./components/Nav";
+import withAuth from './components/withAuth';
 import './App.css';
 
 class App extends Component {
@@ -17,6 +18,7 @@ class App extends Component {
   }
 
   render() {
+    const isAuth = this.state.isAuth;
     return (
       <Router>
         <div className="App">
@@ -25,7 +27,7 @@ class App extends Component {
               <Route exact path="/" component={About} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/signup" component={SignUp} />
-              <Route exact path="/workout" component={Workout} />
+              <Route exact path="/workout" component={withAuth(Workout)} />
               <Route component={Error} />
             </Switch>
         </div>
