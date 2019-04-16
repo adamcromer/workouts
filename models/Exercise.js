@@ -15,7 +15,6 @@ const exerciseSchema = new Schema({
     popularity: {
         type: Number,
         trim: true,
-        required: true,
         default: 0
     },
     description: {

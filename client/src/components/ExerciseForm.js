@@ -12,6 +12,7 @@ class ExerciseForm extends Component {
         this.setState({
             [name]: value
         });
+        console.log(this.state)
     }
 
     handleSubmit = event => {
@@ -24,16 +25,15 @@ class ExerciseForm extends Component {
     }
 
     newExercise = () => {
-        console.log("Loaded newExercise in Form")
         API.saveExercise({
             title: this.state.title,
-            createdBy: this.state.user,
+            createdBy: "user",
             description: this.state.description,
             tutorial: this.state.tutorial,
-            type: ["this.state.type"],
+            type: "this.state.type",
             length: this.state.length,
-            target: ["this.state.targets"],
-            tags: ["this.state.tags"]
+            target: "this.state.targets",
+            tags: "this.state.tags"
         }).then(() => {
             console.log("Saved new Exercise");
         }).catch(err => console.log(err));

@@ -11,7 +11,6 @@ export default {
         return axios.get('/api/user/' + userEmail);
     },
     saveExercise: function(exerciseData) {
-        console.log("saveExercise in API.js works")
         return axios.post('/api/exercise', exerciseData);
     },
     saveWorkout: function(workoutData) {
