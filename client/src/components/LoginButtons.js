@@ -1,40 +1,30 @@
 import React, { Component } from 'react';
-import InputGroup from 'react-bootstrap/InputGroup';
-import FormControl from 'react-bootstrap/FormControl';
+
 import Button from 'react-bootstrap/Button';
 
 class LoginButtons extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            email: ''
-        }
-    }
-
-    handleInputChange = event => {
-        const { name, value } = event.target;
-        this.setState({
-            [name]: value
-        })
+        this.state = {}
     }
 
     render() {
-        return ( 
+        return (
 
-            <InputGroup>
-                <FormControl
-                    type="email" 
-                    name="email" 
-                    placeholder="Email Address"
-                    aria-label="Email Address"
-                    aria-describedby="basic-addon2"
-                />
-                <InputGroup.Append>
-                    <Button href="/login" variant="primary">Login</Button>
-                    <Button href="/signup" variant="secondary">Sign Up</Button>
-                </InputGroup.Append>
-            </InputGroup>
+            <div>
+                <Button
+                    href="/login"
+                    variant="primary">
+                    Login
+                    </Button>
+                &nbsp;
+                    <Button
+                    href="/signup"
+                    variant="secondary">
+                    Sign Up
+                    </Button>
+            </div>
 
         )
     }
