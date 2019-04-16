@@ -4,19 +4,13 @@ import Button from 'react-bootstrap/Button';
 import API from "../utils/API";
 
 class Login extends React.Component {
+    
     state = {
         validated: false,
         user: [],
         email: "",
         password: "",
         isAuth: false
-    }
-
-    handleInputChange = event => {
-        const { name, value } = event.target;
-        this.setState({
-            [name]: value
-        });
     }
 
     handleSubmit = event => {
