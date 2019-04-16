@@ -35,11 +35,11 @@
 a {
   color: yellow;
 }
-<<<<<<< HEAD
-=======
 
 .title {
   color: white;
 }
 
->>>>>>> 64dc2f3eebfc1395b91be61ef89e11e248bb8da1
+.login, .signup {
+  padding-top: 3em;
+}

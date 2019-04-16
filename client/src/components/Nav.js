@@ -11,17 +11,26 @@ class Nav extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isAuth: false
-    }
+      isAuth: false,
+    };
   }
 
+  componentDidMount() {
+    console.log(window.location.pathname);
+    let thisPath = window.location.pathname;
+    if (thisPath.includes('workout')) {
+      this.setState({
+        isAuth: true
+      })
+    } 
+  }
 
   render() {
     return (
 
       <Navbar bg="dark" variant="dark" expand="lg">
         <Container>
-          <Navbar.Brand href="#home">Workouts</Navbar.Brand>
+          <Navbar.Brand href="/">Workouts</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
             <div className="mr-auto">

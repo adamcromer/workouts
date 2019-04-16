@@ -10,11 +10,10 @@ import Row from 'react-bootstrap/Row';
 
 class Workout extends Component {
 
-
     render() {
         return (
             <Container>
-            <div className="Workout">
+              <div className="Workout">
                 <h3>Create a Workout</h3>
                 
                 <Row>
@@ -27,7 +26,7 @@ class Workout extends Component {
                         <View />   
                     </Col>
                 </Row>
-            </div>
+              </div>
             </Container>
         );
     }
