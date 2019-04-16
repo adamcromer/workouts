@@ -12,7 +12,7 @@ class ExerciseForm extends Component {
         return ( 
             <div className="exercise-form">
                 <Container>
-                <h2>Create a Workout</h2>
+                <h2>Create an Exercise</h2>
                     <Form>
                     <Form.Group controlId="title">
                         <Form.Label>Title</Form.Label>
@@ -34,6 +34,7 @@ class ExerciseForm extends Component {
                                     custom
                                     inline
                                     label="Reps"
+                                    name="radio"
                                     type={type}
                                     id={`custom-inline-${type}-1`}
                                 />
@@ -41,6 +42,7 @@ class ExerciseForm extends Component {
                                     custom
                                     inline
                                     label="Time"
+                                    name="radio"
                                     type={type}
                                     id={`custom-inline-${type}-2`}
                                 />
@@ -151,6 +153,76 @@ class ExerciseForm extends Component {
                                     label="Flexibility & Stretching"
                                     type={type}
                                     id={`custom-inline-${type}-13`}
+                                />
+                                <Form.Check
+                                    custom
+                                    inline
+                                    label="Dumbbells"
+                                    type={type}
+                                    id={`custom-inline-${type}-14`}
+                                />
+                                <Form.Check
+                                    custom
+                                    inline
+                                    label="Resistance Bands"
+                                    type={type}
+                                    id={`custom-inline-${type}-15`}
+                                />
+                                 <Form.Check
+                                    custom
+                                    inline
+                                    label="Kettlebell"
+                                    type={type}
+                                    id={`custom-inline-${type}-16`}
+                                />
+                                <Form.Check
+                                    custom
+                                    inline
+                                    label="Sliders"
+                                    type={type}
+                                    id={`custom-inline-${type}-17`}
+                                />
+                                <Form.Check
+                                    custom
+                                    inline
+                                    label="Weighted Gloves"
+                                    type={type}
+                                    id={`custom-inline-${type}-18`}
+                                />
+                                <Form.Check
+                                    custom
+                                    inline
+                                    label="Balance Ball"
+                                    type={type}
+                                    id={`custom-inline-${type}-19`}
+                                />
+                                <Form.Check
+                                    custom
+                                    inline
+                                    label="Mat"
+                                    type={type}
+                                    id={`custom-inline-${type}-20`}
+                                />
+                                <Form.Check
+                                    custom
+                                    inline
+                                    label="Medicine Ball"
+                                    type={type}
+                                    id={`custom-inline-${type}-21`}
+                                />
+                                 <Form.Check
+                                    custom
+                                    inline
+                                    label="Jumprope"
+                                    type={type}
+                                    id={`custom-inline-${type}-22`}
+                                />
+                                 <Form.Check
+                                    custom
+                                    inline
+                                    label="Foam Roller"
+                                    type={type}
+                                    id={`custom-inline-${type}-23`}
                                 />
                                 </div>
                             ))}
