@@ -11,16 +11,15 @@ class Sidebar extends React.Component {
 
     render() {
         return (
-            <Card bg="dark" text="white" style={{ width: '13.5rem' }}>
+            <Card bg="dark" text="white" style={{ width: '13rem' }}>
                 <div className = "sidebar">
                 <Card.Header as="h5">User Name</Card.Header>
                 <Card.Body>
-                    <ButtonGroup vertical center>
-                        <Button href="/workout" variant="warning" size="lg">Your Workouts</Button>
-                        <Button href="/workout" variant="warning" size="lg">Create Exercise</Button>
-                        <Button href="/workout" variant="warning" size="lg">Create Workout</Button>
-                        <Button href="/workout" variant="warning" size="lg">Edit</Button>
-                        <Button vhref="/workout" variant="warning" size="lg">Save</Button>
+                    <ButtonGroup vertical>
+                        <Button href="/workout" variant="warning" size="lg">View Workouts</Button>
+                        <Button href="/workout" variant="warning" size="lg"><i class="fas fa-plus fa-fw"></i>Workout</Button>
+                        <Button href="/workout" variant="warning" size="lg">View Exercises</Button>
+                        <Button href="/workout" variant="warning" size="lg"><i class="fas fa-plus fa-fw"></i>Exercise</Button>
                     </ButtonGroup>
                 </Card.Body>
                 </div>
