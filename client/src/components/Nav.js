@@ -29,15 +29,17 @@ class Nav extends Component {
     return (
 
       <Navbar bg="dark" variant="dark" expand="lg">
-        <Container>
+        <Container className="justify-content-between">
           <Navbar.Brand href="/">Workouts</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
-            <div className="mr-auto">
-              {this.state.isAuth ?
-                <UserInfo /> : <LoginButtons />}
-            </div>
-          </Navbar.Collapse>
+          <div>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+              <div className="mr-auto">
+                {this.state.isAuth ?
+                  <UserInfo /> : <LoginButtons />}
+              </div>
+            </Navbar.Collapse>
+          </div>
         </Container>
       </Navbar>
 
