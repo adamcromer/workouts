@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Sidebar from "../components/Sidebar";
 import List from "../components/List";
-import View from "../components/View";
+import SingleExercise from "../components/SingleExercise";
+import AllExercises from "../components/AllExercises";
 import Container from 'react-bootstrap/Container';
 import ExerciseForm from '../components/ExerciseForm';
 import WorkoutForm from '../components/WorkoutForm';
@@ -29,6 +30,21 @@ class Workout extends Component {
                     </Col>
                 </Row>
               </div>
+                <div className="Workout">
+                    <h3>Create a Workout</h3>
+
+                    <Row>
+                        <Col md={4}>
+                            <Sidebar />
+                        </Col>
+                        <Col md={8}>
+                            <ExerciseForm />
+                            <List />
+                            <SingleExercise />
+                            <AllExercises />
+                        </Col>
+                    </Row>
+                </div>
             </Container>
         );
     }

@@ -1,11 +1,18 @@
 import axios from 'axios';
 
 export default {
-    getAllExercises: function(id) {
-        return axios.get('/api/exercise' + id);
+    getAllExercises: function() {
+        return axios.get('/api/exercise');
     },
-    getAllWorkouts: function(id) {
-        return axios.get('/api/workouts' + id);
+    getOneExercise: function(id) {
+        console.log("getOneExercise loaded");
+        return axios.get('api/exercise/' + id);
+    },
+    getAllWorkouts: function() {
+        return axios.get('/api/workouts');
+    },
+    getOneWorkout: function(id) {
+        return axios.get('api/workout/' + id);
     },
     findUser: function(userEmail) {
         return axios.get('/api/user/' + userEmail);
