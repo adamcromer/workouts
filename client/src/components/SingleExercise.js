@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import API from "../utils/API";
 
-class View extends React.Component {
+class SingleExercise extends React.Component {
 
     state = {
         exercise: {}
@@ -51,4 +51,4 @@ class View extends React.Component {
         );
     }
 }
-export default View;
+export default SingleExercise;
