@@ -24,7 +24,7 @@ class Login extends React.Component {
             [name]: value
         });
     }
-
+    
     handleSubmit = event => {
         event.preventDefault();
         const form = event.currentTarget;

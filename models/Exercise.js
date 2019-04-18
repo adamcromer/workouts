@@ -6,7 +6,7 @@ const exerciseSchema = new Schema({
         type: String,
         required: true,
         trim: true
-    }, 
+    },
     createdBy: {
         type: String,
         required: true,
@@ -18,28 +18,29 @@ const exerciseSchema = new Schema({
         default: 0
     },
     description: {
-        type: String, 
+        type: String,
         required: true,
         trim: true
     },
     tutorial: {
         type: String,
+        required: true,
         trim: true
     },
     type: {
         type: String, // reps or time?
         required: true,
-        trim: true, 
-        length: {
-            type: String,
-            required: true,
-            trim: true
-        }
-    }, 
+        trim: true,
+    },
+    length: {
+        type: String,
+        required: true,
+        trim: true
+    },
     target: [{
-       type: String,
-       required: true,
-       trim: true 
+        type: String,
+        required: true,
+        trim: true
     }],
     tags: [{
         type: String,
