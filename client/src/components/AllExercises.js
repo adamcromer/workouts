@@ -1,19 +1,26 @@
 import React, { Component } from 'react';
 import Table from 'react-bootstrap/Table'
+import API from "../utils/API";
 
 class List extends React.Component {
 
     state = {
-        title: "fail",
-        createdBy: "",
-        description: "",
-        tutorial: "",
-        type: "",
-        length: 0,
-        target: [],
-        tags: []
+        exercises: []
     };
 
+    componentDidMount = () => {
+        this.loadExercises();
+    }
+
+    loadExercises = () => {
+        API.getAllExercises()
+            .then(res =>
+                this.setState({
+                    exercises: res.data
+                })
+            )
+            .catch(err => console.log(err));
+    }
 
     render() {
         return (
@@ -34,16 +41,19 @@ class List extends React.Component {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>{this.state.title}</td>
-                            <td>{this.state.Author}</td>
-                            <td>{this.state.description}</td>
-                            <td>{this.state.tutorial}</td>
-                            <td>{this.state.type}</td>
-                            <td>{this.state.length}</td>
-                            <td>{this.state.target}</td>
-                            <td>{this.state.tags}</td>
-                        </tr>
+
+                        {this.state.exercises.map(exercise =>
+                            <tr>
+                                <td>{exercise.title}</td>
+                                <td>{exercise.Author}</td>
+                                <td>{exercise.description}</td>
+                                <td>{exercise.tutorial}</td>
+                                <td>{exercise.type}</td>
+                                <td>{exercise.length}</td>
+                                <td>{exercise.target}</td>
+                                <td>{exercise.tags}</td>
+                            </tr>
+                        )}
                         <tr>
                             <td>2</td>
                             <td>Jacob</td>
