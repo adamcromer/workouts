@@ -4,6 +4,7 @@ import List from "../components/List";
 import View from "../components/View";
 import Container from 'react-bootstrap/Container';
 import ExerciseForm from '../components/ExerciseForm';
+import WorkoutForm from '../components/WorkoutForm';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
@@ -22,6 +23,7 @@ class Workout extends Component {
                     </Col>
                     <Col md={8}>
                         <ExerciseForm />
+                        <WorkoutForm />
                         <List />
                         <View />   
                     </Col>
