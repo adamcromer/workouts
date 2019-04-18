@@ -18,6 +18,13 @@ class Login extends React.Component {
         }
     }
 
+    handleInputChange = event => {
+        const { name, value } = event.target;
+        this.setState({
+            [name]: value
+        });
+    }
+    
     handleSubmit = event => {
         event.preventDefault();
         const form = event.currentTarget;
