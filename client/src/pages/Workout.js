@@ -15,21 +15,6 @@ class Workout extends Component {
     render() {
         return (
             <Container>
-              <div className="Workout">
-                <h3>Create a Workout</h3>
-                
-                <Row>
-                    <Col md={4}>
-                        <Sidebar/>
-                    </Col>
-                    <Col md={8}>
-                        <ExerciseForm />
-                        <WorkoutForm />
-                        <List />
-                        <View />   
-                    </Col>
-                </Row>
-              </div>
                 <div className="Workout">
                     <h3>Create a Workout</h3>
 
@@ -39,6 +24,7 @@ class Workout extends Component {
                         </Col>
                         <Col md={8}>
                             <ExerciseForm />
+                            <WorkoutForm />
                             <List />
                             <SingleExercise />
                             <AllExercises />
