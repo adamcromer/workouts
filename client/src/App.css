@@ -56,3 +56,23 @@ nav {
   color:#ffbb33;
   text-decoration: none;
 }
+
+.card-header {
+  color:#ffbb33; 
+}
+
+.exercise-form-padding {
+  padding: 15px;
+}
+.workout-form-padding {
+  padding: 15px;
+}
+.flex-form {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.flex-form>*{
+  padding-right: 15px;
+}

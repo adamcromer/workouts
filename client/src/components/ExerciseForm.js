@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
+import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Checkbox from "../components/Checkbox";
@@ -146,8 +147,10 @@ class ExerciseForm extends Component {
         return (
             <div className="exercise-form" onChange={this.handleInputChange}>
                 <Container>
-                    <h2>Create an Exercise</h2>
-                    <Form>
+                <Card bg="dark" text="white">
+                <Card.Header variant = "dark" as="h2">Create an Exercise</Card.Header>
+                <Card.Body>
+                    <Form className="exercise-form-padding">
                         <Form.Group controlId="title">
                             <Form.Label>Title</Form.Label>
                             <Form.Control as="textarea" rows="1" name="title" />
@@ -164,6 +167,7 @@ class ExerciseForm extends Component {
                             <Form.Label>Type</Form.Label>
                             {['radio'].map(type => (
                                 <div key={`custom-inline-${type}`} className="mb-3">
+                                <div className="flex-form">
                                     <Form.Check
                                         custom
                                         inline
@@ -175,7 +179,7 @@ class ExerciseForm extends Component {
                                         checked={this.state.repsOrTime === "Reps"}
                                         onChange={this.handleOptionChange}
                                         className="form-check-input"
-                                    />
+                                    />                                    
                                     <Form.Check
                                         custom
                                         inline
@@ -188,6 +192,7 @@ class ExerciseForm extends Component {
                                         onChange={this.handleOptionChange}
                                         className="form-check-input"
                                     />
+                                    </div>
                                 </div>
                             ))}
                             <Form.Label>Length</Form.Label>
@@ -195,18 +200,23 @@ class ExerciseForm extends Component {
                         </Form.Group>
                         <Form.Group controlId="target-area" name="target">
                             <Form.Label>Target Area</Form.Label>
+                            <div className="flex-form">
                             {this.createTargets()}
+                            </div>
                         </Form.Group>
-
                         <Form.Group controlId="tags" name="tags">
                             <Form.Label>Tags</Form.Label>
+                            <div className="flex-form">
                             {this.createTags()}
+                            </div>
                         </Form.Group>
 
                         <Form.Group as={Row}>
                             <Button type="submit" variant="warning" onClick={this.handleSubmit}>Save Exercise</Button>
                         </Form.Group>
                     </Form>
+                    </Card.Body>
+                    </Card>
                 </Container>
             </div>
         )
