@@ -5,7 +5,7 @@ import Row from 'react-bootstrap/Row';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 
-class List extends React.Component {
+class List extends Component {
 
     state = {
         title: "fail",

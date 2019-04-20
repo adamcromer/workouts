@@ -35,10 +35,17 @@ module.exports = {
             res.status(500)
               .json({ error: 'Internal error! Please try again later.' });
           } else {
+            const passToState = {
+              id: user._id,
+              email: user.email,
+              workouts: user.workouts,
+              isAuth: true
+            }
+            console.log(passToState);
             // issue token
             const payload = { email };
             const token = jwt.sign(payload, secretToken, { expiresIn: '3h' });
-            res.cookie('token', token, { httpOnly: true })
+            res.cookie('token', token, { httpOnly: false, domain: false })
               .sendStatus(200);
           }
         });

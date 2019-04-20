@@ -4,22 +4,24 @@ import Card from 'react-bootstrap/Card'
 
 
 
-class About extends React.Component {
+import Container from 'react-bootstrap/Container'
+
+class About extends Component {
 
 
     render() {
         return (
+          <div className="about">
             <Container>
-                <div className = "about">
-                <Card className="text-center" bg="dark" text="white" style={{ width: '50rem' }}>
-                <Card.Body className = "about-description">
-                <span className="about-heading"><h1>Workouts</h1></span>
-                <hr />
-                <h3>Workout at home with your favorite workouts.</h3>
-            </Card.Body>
-            </Card>
-            </div>
-            </Container>
+              <Card className="text-center" bg="dark" text="white" style={{ width: '50rem' }}>
+                <Card.Body className="about-description">
+                  <h1 className="about-heading">Workouts</h1>
+                  <hr />
+                  <h3>Workout at home with your favorite workouts.</h3>
+                </Card.Body>
+               </Card>
+              </Container>
+          </div>
         );
     }
 }

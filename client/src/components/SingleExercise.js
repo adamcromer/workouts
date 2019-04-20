@@ -5,14 +5,14 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import API from "../utils/API";
 
-class SingleExercise extends React.Component {
+class SingleExercise extends Component {
 
     state = {
         exercise: {}
     };
 
     componentDidMount = () => {
-        this.loadExercise("5cb551ff71fef32900974d24");
+        // this.loadExercise("5cb551ff71fef32900974d24");
     }
 
     loadExercise = (id) => {
