@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
+import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import API from "../utils/API";
@@ -38,8 +39,10 @@ class WorkoutForm extends Component {
         return (
             <div className="workout-form" onChange={this.handleInputChange}>
                 <Container>
-                    <h2>Create a Workout</h2>
-                    <Form>
+                <Card bg="dark" text="white">
+                <Card.Header variant = "dark" as="h2">Create a Workout</Card.Header>
+                <Card.Body>
+                    <Form className="workout-form-padding">
                         <Form.Group controlId="title">
                             <Form.Label>Title</Form.Label>
                             <Form.Control as="textarea" rows="1" name="title" />
@@ -52,6 +55,8 @@ class WorkoutForm extends Component {
                             <Button type="submit" variant="warning" onClick={this.handleSubmit}>Save Workout</Button>
                         </Form.Group>
                     </Form>
+                    </Card.Body>
+                    </Card>
                 </Container>
             </div>
         )
