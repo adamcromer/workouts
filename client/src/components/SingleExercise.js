@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import API from "../utils/API";
 
-class SingleExercise extends React.Component {
+class SingleExercise extends Component {
 
     state = {
         exercise: {}
