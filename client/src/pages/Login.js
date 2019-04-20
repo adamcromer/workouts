@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import Container from 'react-bootstrap/Container';
+import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
@@ -90,8 +91,10 @@ class Login extends Component {
 
         return (
             <div className="login">
-                <Container>
-                    <h2>Log In to Workouts</h2>
+                <Container className = "login-container">
+                <Card bg="dark" text="white">
+                <Card.Header variant = "dark" as="h2">Log In to Workouts</Card.Header>
+                <Card.Body>
                     <Form 
                         noValidate
                         validated={validated}
@@ -99,7 +102,7 @@ class Login extends Component {
                         onSubmit={e => this.handleSubmit(e)}>
 
                         <Form.Group controlId="formBasicEmail">
-                            <Form.Label>Email address</Form.Label>
+                            <Form.Label variant= "light" >Email address</Form.Label>
                             <Form.Control type="email" name="email" placeholder="Enter email" />
                             <Form.Text className="text-muted">
                                 We'll never share your email with anyone else.
@@ -111,10 +114,12 @@ class Login extends Component {
                             <Form.Control type="password" name="password" placeholder="Password" />
                         </Form.Group>
 
-                        <Button variant="dark" type="submit">
+                        <Button variant="warning" type="submit">
                             Log In
                         </Button>
                     </Form>
+                    </Card.Body>
+                    </Card>
                 </Container>
             </div>
         )

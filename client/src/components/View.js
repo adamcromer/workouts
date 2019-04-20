@@ -100,7 +100,7 @@ class View extends React.Component {
               </div>
               <Button type="submit" variant="warning" onClick={this.handleSubmit}>Start Timer</Button>
               <Button type="submit" variant="warning" onClick={this.handleSubmit}>Edit Workout</Button>
-              </Container>
+            
                 <div className="view">
                     <h1>View</h1>
                     <Row>
