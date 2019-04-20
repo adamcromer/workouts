@@ -50,3 +50,11 @@ nav {
   margin-bottom: 1.5em;
 }
 
+/*Username*/
+.username-title {
+  color: white;
+}
+.username-title:hover {
+  color:#ffbb33;
+  text-decoration: none;
+}

@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card'
 
-
-
-import Container from 'react-bootstrap/Container'
-
 class About extends Component {
 
 

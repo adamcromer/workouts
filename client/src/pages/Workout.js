@@ -34,7 +34,6 @@ class Workout extends Component {
         return (
             <Container>
                 <div className="Workout">
-                    <h3>Create a Workout</h3>
                     <Row>
                         <Col md={4}>
                             <Sidebar />
