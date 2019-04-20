@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 
-// import jwtDecode from 'jwt-decode';
-
 export default function withAuth(ComponentToProtect) {
     return class extends Component {
         constructor() {
@@ -13,20 +11,14 @@ export default function withAuth(ComponentToProtect) {
             };
         }
 
-        
-        
         componentDidMount() {
             fetch('/checkToken')
                 .then(res => {
                     if (res.status === 200) {
                         var thisToken = document.cookie.split('=')[1];
-                        console.log(thisToken);
-
                         var base64Url = thisToken.split('.')[1];
                         var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
                         var decodedToken = JSON.parse(window.atob(base64));
-                        console.log(decodedToken);
-
                         this.setState({ loading: false, email: decodedToken.email });
                     } else {
                         const error = new Error(res.error);
