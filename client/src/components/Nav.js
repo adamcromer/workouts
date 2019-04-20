@@ -32,7 +32,7 @@ class Nav extends Component {
         <Container className="justify-content-between">
           <Navbar.Brand className = "brand-name">
           <a className = "navbar-brand" href="/">Workouts
-          <img className = "nav-logo" src = "/images/Workout-Favicon-Light.png" style={{width:55, marginTop: -5}} />
+          <img className="nav-logo" alt="Workout Logo" src="/images/Workout-Favicon-Light.png" style={{width:55, marginTop: -5}} />
           </a>
           </Navbar.Brand>
           <div>
