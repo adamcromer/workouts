@@ -10,12 +10,16 @@ export default function withAuth(ComponentToProtect) {
                 redirect: false
             };
         }
-        
+
         componentDidMount() {
             fetch('/checkToken')
                 .then(res => {
                     if (res.status === 200) {
-                        this.setState({ loading: false });
+                        var thisToken = document.cookie.split('=')[1];
+                        var base64Url = thisToken.split('.')[1];
+                        var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+                        var decodedToken = JSON.parse(window.atob(base64));
+                        this.setState({ loading: false, email: decodedToken.email });
                     } else {
                         const error = new Error(res.error);
                         throw error;
@@ -37,7 +41,7 @@ export default function withAuth(ComponentToProtect) {
             }
             return (
                 <React.Fragment>
-                    <ComponentToProtect {...this.props} />
+                    <ComponentToProtect {...this.props } email={this.state.email} />
                 </React.Fragment>
             );
         }

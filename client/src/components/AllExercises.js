@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Table from 'react-bootstrap/Table'
 import API from "../utils/API";
 
-class List extends React.Component {
+class List extends Component {
 
     state = {
         exercises: []

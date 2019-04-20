@@ -6,7 +6,7 @@ import Card from 'react-bootstrap/Card'
 
 
 
-class Sidebar extends React.Component {
+class Sidebar extends Component {
 
 
     render() {
@@ -17,9 +17,9 @@ class Sidebar extends React.Component {
                 <Card.Body>
                     <ButtonGroup vertical>
                         <Button href="/workout" variant="warning" size="lg">View Workouts</Button>
-                        <Button href="/workout" variant="warning" size="lg"><i class="fas fa-plus fa-fw"></i>Workout</Button>
+                        <Button href="/workout" variant="warning" size="lg"><i className="fas fa-plus fa-fw"></i>Workout</Button>
                         <Button href="/workout" variant="warning" size="lg">View Exercises</Button>
-                        <Button href="/workout" variant="warning" size="lg"><i class="fas fa-plus fa-fw"></i>Exercise</Button>
+                        <Button href="/workout" variant="warning" size="lg"><i className="fas fa-plus fa-fw"></i>Exercise</Button>
                     </ButtonGroup>
                 </Card.Body>
                 </div>
