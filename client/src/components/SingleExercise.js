@@ -12,7 +12,7 @@ class SingleExercise extends Component {
     };
 
     componentDidMount = () => {
-        // this.loadExercise("5cb551ff71fef32900974d24");
+        this.loadExercise("5cbb64a97e89c4614cda2430");
     }
 
     loadExercise = (id) => {
@@ -37,13 +37,14 @@ class SingleExercise extends Component {
                             View of Single Exercise or Workout
                             <ReactCountdownClock />
                             <h1>{this.state.exercise.title}</h1>
-                            <h2>{this.state.exercise.author}</h2>
                             <p>{this.state.exercise.description}</p>
                             <p>{this.state.exercise.tutorial}</p>
                             <h2>{this.state.exercise.type}</h2>
                             <h2>{this.state.exercise.length}</h2>
                             {/* <h2>{(this.state.exercise.target).join(", ")}</h2>
                             <h2>{(this.state.exercise.tags).join(", ")}</h2> */}
+                            <h2>{(this.state.exercise.target)}</h2>
+                            <h2>{(this.state.exercise.tags)}</h2>
                         </Col>
                     </Row>
                 </div>

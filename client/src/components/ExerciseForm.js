@@ -128,7 +128,7 @@ class ExerciseForm extends Component {
 
         API.saveExercise({
             title: this.state.title,
-            createdBy: "user",
+            createdBy: this.props.user[0].email,
             description: this.state.description,
             tutorial: this.state.tutorial,
             type: this.state.repsOrTime,

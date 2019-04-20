@@ -31,7 +31,6 @@ class List extends Component {
                     <thead>
                         <tr>
                             <th>Title</th>
-                            <th>Author</th>
                             <th>Description</th>
                             <th>Tutorial</th>
                             <th>Type</th>
@@ -44,7 +43,6 @@ class List extends Component {
                         {this.state.exercises.map(exercise =>
                             <tr>
                                 <td>{exercise.title}</td>
-                                <td>{exercise.Author}</td>
                                 <td>{exercise.description}</td>
                                 <td>{exercise.tutorial}</td>
                                 <td>{exercise.type}</td>
