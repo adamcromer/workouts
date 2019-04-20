@@ -4,9 +4,9 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
-import API from "../utils/API";
+// import API from "../utils/API";
 
-class Login extends React.Component {
+class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {

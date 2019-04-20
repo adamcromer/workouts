@@ -18,7 +18,7 @@ class App extends Component {
   }
 
   render() {
-    const isAuth = this.state.isAuth;
+    // const isAuth = this.state.isAuth;
     return (
       <Router>
         <div className="App">
