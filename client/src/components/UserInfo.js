@@ -14,7 +14,7 @@ class UserInfo extends Component {
         return ( 
 
             <div>
-                <a href={`/${this.state.username}`}>
+                <a className = "username-title" href={`/${this.state.username}`}>
                     <strong>{this.state.username}</strong>
                 </a>
                 &nbsp;<Button href="/logout" variant="warning">Logout</Button>
