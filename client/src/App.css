@@ -40,6 +40,6 @@ a {
   color: white;
 }
 
-.login, .signup {
-  padding-top: 3em;
+nav {
+  margin-bottom: 1.5em;
 }

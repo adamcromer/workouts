@@ -12,7 +12,7 @@ class SingleExercise extends React.Component {
     };
 
     componentDidMount = () => {
-        this.loadExercise("5cb551ff71fef32900974d24");
+        // this.loadExercise("5cb551ff71fef32900974d24");
     }
 
     loadExercise = (id) => {

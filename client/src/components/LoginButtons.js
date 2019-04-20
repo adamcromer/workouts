@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Button from 'react-bootstrap/Button';
 
 class LoginButtons extends Component {
@@ -12,19 +13,10 @@ class LoginButtons extends Component {
     render() {
         return (
 
-            <div>
-                <Button
-                    href="/login"
-                    variant="primary">
-                    Login
-                    </Button>
-                &nbsp;
-                    <Button
-                    href="/signup"
-                    variant="secondary">
-                    Sign Up
-                    </Button>
-            </div>
+            <ButtonGroup aria-label="Basic example">
+                <Button href="/login" variant="warning">Log In</Button>
+                <Button href="/signup" variant="secondary">Sign Up</Button>
+            </ButtonGroup>
 
         )
     }
