@@ -3,19 +3,28 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card'
 
-
-
-
 class Sidebar extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            isAuth: true,
+            username: '',
+            email: ''
+        }
+    }
+
+    componentDidUpdate() {
+        console.log(this.props.user[0])
+    }
 
     render() {
         return (
-            <Card bg="dark" text="white" style={{ width: '13rem' }}>
-                <div className = "sidebar">
-                <Card.Header as="h5">User Name</Card.Header>
+            <Card bg="dark" text="white" style={{ width: '100%' }}>
+                <div className="sidebar">
+                <Card.Header as="h5">USERNAME</Card.Header>
                 <Card.Body>
-                    <ButtonGroup vertical>
+                    <ButtonGroup vertical style={{ width: '100%' }}>
                         <Button href="/workout" variant="warning" size="lg">View Workouts</Button>
                         <Button href="/workout" variant="warning" size="lg"><i className="fas fa-plus fa-fw"></i>Workout</Button>
                         <Button href="/workout" variant="warning" size="lg">View Exercises</Button>

@@ -27,7 +27,7 @@ class Workout extends Component {
     }
 
     componentDidUpdate() {
-        console.log(this.state);
+        // console.log(this.state);
     }
 
     render() {
@@ -36,7 +36,7 @@ class Workout extends Component {
                 <div className="Workout">
                     <Row>
                         <Col md={4}>
-                            <Sidebar />
+                            <Sidebar user={this.state.user}/>
                         </Col>
                         <Col md={8}>
                             <ExerciseForm user={this.state.user}/>
