@@ -1,15 +1,29 @@
 import React, { Component } from 'react';
+import Container from 'react-bootstrap/Container';
+import Card from 'react-bootstrap/Card'
+
+
 
 class About extends React.Component {
 
 
     render() {
         return (
-
-            <div className = "about">
-                <h3>Workouts is an app to allows users to create and save workouts with a set of specific exercises for each workout.</h3>
+            <Container>
+                <div className = "about">
+                <Card className="text-center" bg="dark" text="white" style={{ width: '50rem' }}>
+                <Card.Body className = "about-description">
+                <span className="about-heading"><h1>Workouts</h1></span>
+                <hr />
+                <h3>Workout at home with your favorite workouts.</h3>
+            </Card.Body>
+            </Card>
             </div>
+            </Container>
         );
     }
 }
 export default About;
+
+
+

@@ -15,13 +15,13 @@ class LoginButtons extends Component {
             <div>
                 <Button
                     href="/login"
-                    variant="primary">
+                    variant="light">
                     Login
                     </Button>
                 &nbsp;
                     <Button
                     href="/signup"
-                    variant="secondary">
+                    variant="warning">
                     Sign Up
                     </Button>
             </div>

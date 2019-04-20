@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import Container from 'react-bootstrap/Container';
+import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
@@ -51,8 +52,10 @@ class SignUp extends Component {
 
         return (
             <div className="signup">
-                <Container>
-                    <h2>Sign Up for Workouts</h2>
+                <Container className = "signup-container">
+                <Card bg="dark" text="white">
+                <Card.Header variant = "dark" as="h2">Sign Up for Workouts</Card.Header>
+                <Card.Body>
                     <Form
                         noValidate
                         validated={validated}
@@ -90,10 +93,12 @@ class SignUp extends Component {
                                 required />
                         </Form.Group>
 
-                        <Button variant="dark" type="submit">
+                        <Button variant="warning" type="submit">
                             Sign Up
                         </Button>
                     </Form>
+                    </Card.Body>
+                    </Card>
                 </Container>
             </div>
         )
