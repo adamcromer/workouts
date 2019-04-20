@@ -41,7 +41,6 @@ class List extends React.Component {
                         </tr>
                     </thead>
                     <tbody>
-
                         {this.state.exercises.map(exercise =>
                             <tr>
                                 <td>{exercise.title}</td>
@@ -50,16 +49,10 @@ class List extends React.Component {
                                 <td>{exercise.tutorial}</td>
                                 <td>{exercise.type}</td>
                                 <td>{exercise.length}</td>
-                                <td>{exercise.target}</td>
-                                <td>{exercise.tags}</td>
+                                <td>{(exercise.target).join(", ")}</td>
+                                <td>{(exercise.tags).join(", ")}</td>
                             </tr>
                         )}
-                        <tr>
-                            <td>2</td>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
                     </tbody>
                 </Table>
             </div>
