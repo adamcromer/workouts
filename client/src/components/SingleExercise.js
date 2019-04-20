@@ -42,8 +42,8 @@ class SingleExercise extends Component {
                             <p>{this.state.exercise.tutorial}</p>
                             <h2>{this.state.exercise.type}</h2>
                             <h2>{this.state.exercise.length}</h2>
-                            <h2>{this.state.exercise.target}</h2>
-                            <h2>{this.state.exercise.tags}</h2>
+                            {/* <h2>{(this.state.exercise.target).join(", ")}</h2>
+                            <h2>{(this.state.exercise.tags).join(", ")}</h2> */}
                         </Col>
                     </Row>
                 </div>

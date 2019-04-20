@@ -3,9 +3,38 @@ import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
+import Checkbox from "../components/Checkbox";
 import API from "../utils/API";
 
+
 class ExerciseForm extends Component {
+
+    targets = ["Chest", "Triceps", "Abs", "Shoulders", "Back", "Biceps", "Glutes", "Legs"];
+
+    tags = ["Cardio", "Muscle Building", "Full-Body", "Hiit", "Flexibility & Stretching",
+        "Dumbbells", "Resistance Bands", "Kettlebell", "Sliders", "Weighted Gloves", "Balance Ball",
+        "Mat", "Medicine Ball", "Jumprope", "Foam Roller"];
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            repsOrTime: "",
+            tags: this.tags.reduce(
+                (tags, tag) => ({
+                    ...tags,
+                    [tag]: false
+                }),
+                {}
+            ),
+            targets: this.targets.reduce(
+                (targets, target) => ({
+                    ...targets,
+                    [target]: false
+                }),
+                {}
+            )
+        };
+    }
 
     handleInputChange = event => {
         const { name, value } = event.target;
@@ -14,6 +43,77 @@ class ExerciseForm extends Component {
         });
         console.log(this.state)
     }
+
+    handleTargetChange = changeEvent => {
+        const { name } = changeEvent.target;
+
+        this.setState(prevState => ({
+            targets: {
+                ...prevState.targets,
+                [name]: !prevState.targets[name]
+            }
+        }));
+    };
+
+    handleTagChange = changeEvent => {
+        const { name } = changeEvent.target;
+
+        this.setState(prevState => ({
+            tags: {
+                ...prevState.tags,
+                [name]: !prevState.tags[name]
+            }
+        }));
+    };
+
+    selectAllTags = isSelected => {
+        Object.keys(this.state.tags).forEach(tag => {
+            this.setState(prevState => ({
+                tags: {
+                    ...prevState.tags,
+                    [tag]: isSelected
+                }
+            }));
+        });
+    };
+
+    selectAllTargets = isSelected => {
+        Object.keys(this.state.targets).forEach(target => {
+            this.setState(prevState => ({
+                targets: {
+                    ...prevState.targets,
+                    [target]: isSelected
+                }
+            }));
+        });
+    };
+
+    createTag = tag => (
+        <Checkbox
+            inline
+            label={tag}
+            isSelected={this.state.tags[tag]}
+            onCheckboxChange={this.handleTagChange}
+            key={tag}
+        />
+    );
+
+    createTags = () => this.tags.map(this.createTag);
+
+    createTarget = option => (
+        <Checkbox
+            inline
+            type="checkbox"
+            name={option}
+            label={option}
+            isSelected={this.state.targets[option]}
+            onCheckboxChange={this.handleTargetChange}
+            key={option}
+            custom
+        />
+    );
+
+    createTargets = () => this.targets.map(this.createTarget);
 
     handleSubmit = event => {
         event.preventDefault();
@@ -25,15 +125,18 @@ class ExerciseForm extends Component {
     }
 
     newExercise = () => {
+
         API.saveExercise({
             title: this.state.title,
             createdBy: "user",
             description: this.state.description,
             tutorial: this.state.tutorial,
-            type: "this.state.type",
+            type: this.state.repsOrTime,
             length: this.state.length,
-            target: "this.state.targets",
-            tags: "this.state.tags"
+            target: Object.keys(this.state.targets)
+                .filter(target => this.state.targets[target]),
+            tags: Object.keys(this.state.tags)
+                .filter(tag => this.state.tags[tag])
         }).then(() => {
             console.log("Saved new Exercise");
         }).catch(err => console.log(err));
@@ -57,7 +160,7 @@ class ExerciseForm extends Component {
                             <Form.Label>Tutorial</Form.Label>
                             <Form.Control as="textarea" rows="3" name="tutorial" />
                         </Form.Group>
-                        <Form.Group controlId="type" name="type">
+                        <Form.Group controlId="type">
                             <Form.Label>Type</Form.Label>
                             {['radio'].map(type => (
                                 <div key={`custom-inline-${type}`} className="mb-3">
@@ -65,17 +168,25 @@ class ExerciseForm extends Component {
                                         custom
                                         inline
                                         label="Reps"
-                                        name="radio"
+                                        value="Reps"
+                                        name="repsOrTime"
                                         type={type}
                                         id={`custom-inline-${type}-1`}
+                                        checked={this.state.repsOrTime === "Reps"}
+                                        onChange={this.handleOptionChange}
+                                        className="form-check-input"
                                     />
                                     <Form.Check
                                         custom
                                         inline
                                         label="Time"
-                                        name="radio"
+                                        value="Time"
+                                        name="repsOrTime"
                                         type={type}
                                         id={`custom-inline-${type}-2`}
+                                        checked={this.state.repsOrTime === "Time"}
+                                        onChange={this.handleOptionChange}
+                                        className="form-check-input"
                                     />
                                 </div>
                             ))}
@@ -84,179 +195,12 @@ class ExerciseForm extends Component {
                         </Form.Group>
                         <Form.Group controlId="target-area" name="target">
                             <Form.Label>Target Area</Form.Label>
-                            {['checkbox'].map(type => (
-                                <div key={`custom-inline-${type}`} className="mb-3">
-                                    <Form.Check
-                                        custom
-                                        inline
-                                        label="Chest"
-                                        type={type}
-                                        id={`custom-inline-${type}-1`}
-                                    />
-                                    <Form.Check
-                                        custom
-                                        inline
-                                        label="Triceps"
-                                        type={type}
-                                        id={`custom-inline-${type}-2`}
-                                    />
-                                    <Form.Check
-                                        custom
-                                        inline
-                                        label="Abs"
-                                        type={type}
-                                        id={`custom-inline-${type}-3`}
-                                    />
-                                    <Form.Check
-                                        custom
-                                        inline
-                                        label="Shoulders"
-                                        type={type}
-                                        id={`custom-inline-${type}-4`}
-                                    />
-                                    <Form.Check
-                                        custom
-                                        inline
-                                        label="Back"
-                                        type={type}
-                                        id={`custom-inline-${type}-5`}
-                                    />
-                                    <Form.Check
-                                        custom
-                                        inline
-                                        label="Biceps"
-                                        type={type}
-                                        id={`custom-inline-${type}-6`}
-                                    />
-                                    <Form.Check
-                                        custom
-                                        inline
-                                        label="Glutes"
-                                        type={type}
-                                        id={`custom-inline-${type}-7`}
-                                    />
-                                    <Form.Check
-                                        custom
-                                        inline
-                                        label="Legs"
-                                        type={type}
-                                        id={`custom-inline-${type}-8`}
-                                    />
-                                </div>
-                            ))}
+                            {this.createTargets()}
                         </Form.Group>
 
                         <Form.Group controlId="tags" name="tags">
                             <Form.Label>Tags</Form.Label>
-                            {['checkbox'].map(type => (
-                                <div key={`custom-inline-${type}`} className="mb-3">
-                                    <Form.Check
-                                        custom
-                                        inline
-                                        label="Cardio"
-                                        type={type}
-                                        id={`custom-inline-${type}-9`}
-                                    />
-                                    <Form.Check
-                                        custom
-                                        inline
-                                        label="Muscle Building"
-                                        type={type}
-                                        id={`custom-inline-${type}-10`}
-                                    />
-                                    <Form.Check
-                                        custom
-                                        inline
-                                        label="Full-Body"
-                                        type={type}
-                                        id={`custom-inline-${type}-11`}
-                                    />
-                                    <Form.Check
-                                        custom
-                                        inline
-                                        label="Hiit"
-                                        type={type}
-                                        id={`custom-inline-${type}-12`}
-                                    />
-                                    <Form.Check
-                                        custom
-                                        inline
-                                        label="Flexibility & Stretching"
-                                        type={type}
-                                        id={`custom-inline-${type}-13`}
-                                    />
-                                    <Form.Check
-                                        custom
-                                        inline
-                                        label="Dumbbells"
-                                        type={type}
-                                        id={`custom-inline-${type}-14`}
-                                    />
-                                    <Form.Check
-                                        custom
-                                        inline
-                                        label="Resistance Bands"
-                                        type={type}
-                                        id={`custom-inline-${type}-15`}
-                                    />
-                                    <Form.Check
-                                        custom
-                                        inline
-                                        label="Kettlebell"
-                                        type={type}
-                                        id={`custom-inline-${type}-16`}
-                                    />
-                                    <Form.Check
-                                        custom
-                                        inline
-                                        label="Sliders"
-                                        type={type}
-                                        id={`custom-inline-${type}-17`}
-                                    />
-                                    <Form.Check
-                                        custom
-                                        inline
-                                        label="Weighted Gloves"
-                                        type={type}
-                                        id={`custom-inline-${type}-18`}
-                                    />
-                                    <Form.Check
-                                        custom
-                                        inline
-                                        label="Balance Ball"
-                                        type={type}
-                                        id={`custom-inline-${type}-19`}
-                                    />
-                                    <Form.Check
-                                        custom
-                                        inline
-                                        label="Mat"
-                                        type={type}
-                                        id={`custom-inline-${type}-20`}
-                                    />
-                                    <Form.Check
-                                        custom
-                                        inline
-                                        label="Medicine Ball"
-                                        type={type}
-                                        id={`custom-inline-${type}-21`}
-                                    />
-                                    <Form.Check
-                                        custom
-                                        inline
-                                        label="Jumprope"
-                                        type={type}
-                                        id={`custom-inline-${type}-22`}
-                                    />
-                                    <Form.Check
-                                        custom
-                                        inline
-                                        label="Foam Roller"
-                                        type={type}
-                                        id={`custom-inline-${type}-23`}
-                                    />
-                                </div>
-                            ))}
+                            {this.createTags()}
                         </Form.Group>
 
                         <Form.Group as={Row}>
