@@ -29,10 +29,8 @@
   color: white;
 }
 hr {
-  border-color: white;
-  border-style: solid none none;
-  border-width: 5px 0 0;
-}
+  background-color: white; height: 3px; border: 0; }
+
 
 /*Login Page*/
 .login-container {
