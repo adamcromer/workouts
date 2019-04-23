@@ -23,6 +23,15 @@ export default {
     saveWorkout: function(workoutData) {
         return axios.post('/api/workouts', workoutData);
     },
+    addWorkoutToCreator: function(id, workoutData) {
+        return axios.post('/api/user/create/' + id, workoutData);
+    },
+    addWorkoutToUser: function(id, workoutId) {
+        return axios.post('/api/user/add/' + id, workoutId);
+    },
+    addExerciseToWorkout: function(id, exerciseID) {
+        return axios.post('/api/workout/' + id, exerciseID);
+    },
     saveUser: function(userData) {
         return axios.post('/api/user', userData);
     },

@@ -84,5 +84,31 @@ module.exports = {
       .then(dbModel => dbModel.remove())
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
+  },
+  addWorkoutToCreator: function (req, res) {
+    db.Workout.create(req.body)
+      .then(function (dbWorkout) {
+        console.log('this is the db workout:');
+        console.log(dbWorkout);
+        console.log('this is the db user id:');
+        console.log(req.params.id);
+        db.User.update(
+          { _id: req.params.id }, 
+          { $push: { workouts: dbWorkout._id } }, 
+          { new: true }
+        )
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
+      })
+  },
+  addWorkoutToUser: function (req, res) {
+    db.User
+      .findOneAndUpdate(
+        { _id: req.params.id }, 
+        { $push: { workouts: req.body.id } }, 
+        { new: true }
+      )
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
   }
 };

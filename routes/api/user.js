@@ -15,4 +15,10 @@ router.route('/:email')
     .put(userController.update)
     .delete(userController.remove);
 
+router.route('/create/:id')
+    .post(userController.addWorkoutToCreator);
+
+router.route('/add/:id')
+    .post(userController.addWorkoutToUser);
+
 module.exports = router;

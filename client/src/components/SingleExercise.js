@@ -12,7 +12,7 @@ class SingleExercise extends Component {
     };
 
     componentDidMount = () => {
-        this.loadExercise("5cbb64a97e89c4614cda2430");
+        // this.loadExercise("5cbb64a97e89c4614cda2430");
     }
 
     loadExercise = (id) => {
