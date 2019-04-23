@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import LoginButtons from './LoginButtons';
-import UserInfo from './UserInfo';
+// import LoginButtons from './LoginButtons';
+// import UserInfo from './UserInfo';
 
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
