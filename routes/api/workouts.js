@@ -6,7 +6,7 @@ router.route('/')
     .post(workoutController.create);
 
 router.route('/:id')
-    .get(workoutController.findById)
+    .post(workoutController.addExerciseToWorkout)
     .put(workoutController.update)
     .delete(workoutController.remove);
 

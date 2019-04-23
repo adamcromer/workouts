@@ -58,5 +58,15 @@ module.exports = {
         .then(dbModel => dbModel.remove())
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
+  },
+  addExerciseToWorkout: function (req, res) {
+    db.Workout
+      .findOneAndUpdate(
+        { _id: req.params.id }, 
+        { $push: { exercises: req.body.id } }, 
+        { new: true }
+      )
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
   }
 };
