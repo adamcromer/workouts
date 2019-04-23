@@ -12,16 +12,6 @@ const workoutSchema = new Schema({
         required: true,
         trim: true
     },
-    tags: [{
-        type: String,
-        required: true,
-        trim: true
-    }],
-    target: [{
-        type: String,
-        required: true,
-        trim: true
-    }],
     difficulty: {
         type: Number,
         trim: true
