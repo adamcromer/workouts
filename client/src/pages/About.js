@@ -8,7 +8,7 @@ import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
 import Image from 'react-bootstrap/Image';
 
-
+import LoginButtons from '../components/LoginButtons';
 
 class About extends Component {
 

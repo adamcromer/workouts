@@ -12,12 +12,10 @@ class LoginButtons extends Component {
 
     render() {
         return (
-
-            <ButtonGroup aria-label="Basic example">
-                <Button href="/login" variant="warning">Log In</Button>
-                <Button href="/signup" variant="secondary">Sign Up</Button>
+            <ButtonGroup size="lg" aria-label="Basic example">
+                <Button href="/login" size="lg" variant="warning">Log In</Button>
+                <Button href="/signup" size="lg" variant="secondary">Sign Up</Button>
             </ButtonGroup>
-
         )
     }
 }

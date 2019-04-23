@@ -25,10 +25,10 @@ class Sidebar extends Component {
                 <Card.Header as="h5">USERNAME</Card.Header>
                 <Card.Body>
                     <ButtonGroup vertical style={{ width: '100%' }}>
-                        <Button href="/workout" variant="warning" size="lg">View Workouts</Button>
-                        <Button href="/workout" variant="warning" size="lg"><i className="fas fa-plus fa-fw"></i>Workout</Button>
-                        <Button href="/workout" variant="warning" size="lg">View Exercises</Button>
-                        <Button href="/workout" variant="warning" size="lg"><i className="fas fa-plus fa-fw"></i>Exercise</Button>
+                        <Button href="/workout/all" variant="warning" size="lg">View Workouts</Button>
+                        <Button href="/workout/new" variant="warning" size="lg"><i className="fas fa-plus fa-fw"></i>Workout</Button>
+                        <Button href="/exercise/all" variant="warning" size="lg">View Exercises</Button>
+                        <Button href="/exercise/new" variant="warning" size="lg"><i className="fas fa-plus fa-fw"></i>Exercise</Button>
                     </ButtonGroup>
                 </Card.Body>
                 </div>
