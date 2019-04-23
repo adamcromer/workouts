@@ -1,4 +1,8 @@
 /*Navbar Styling*/
+nav {
+  margin-bottom: 1.5em;
+  border-bottom: 1px solid black;
+}
 .navbar-brand {
   display: flex;
   align-items: center;
@@ -16,45 +20,79 @@
   display: inline-flex;
 }
 
+/*Username*/
+.username-title {
+  color: white;
+  font-weight: 600px;
+}
+.username-title:hover {
+  color:#ffbb33;
+  text-decoration: none;
+}
+
 /*About page styling*/
 .about {
   display: flex;
   justify-content: center;
-  margin-top: 5em;
+  margin: 0px;
 }
 .about-heading {
   color: #ffbb33;
+  text-align: center;
 }
 .about-description {
-  color: white;
+  color:black;
+  text-align: center;
+  padding-left: 75px;
+  padding-right: 75px;
 }
 hr {
-  background-color: white; height: 3px; border: 0; }
+  background-color: white; height: 3px; border: 0; 
+}
+
+.jumbotron {
+    background-image: url(workoutback.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: 100%;
+    height: 600px;
+    margin-top: -1.5em;
+    padding: 0px;
+    color: #ffbb33;
+    border-bottom: 1px solid white;
+}   
+
+.cover-heading {
+ margin-left: 75px;
+ margin-top: 75px;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  border-radius: 2rem;
+}
+
+.card-title {
+  color: #ffbb33;
+}
 
 
 /*Login Page*/
 .login-container {
   padding: 15px 5px;
   border-radius: 3px;
+  margin-top: 1.5em;
 }
 
 /*Sign Up Page*/
 .signup-container {
   padding: 15px 5px;
   border-radius: 3px;
-}
-
-nav {
-  margin-bottom: 1.5em;
-}
-
-/*Username*/
-.username-title {
-  color: white;
-}
-.username-title:hover {
-  color:#ffbb33;
-  text-decoration: none;
+  margin-top: 1.5em;
 }
 
 .card-header {
@@ -75,4 +113,43 @@ nav {
 
 .flex-form>*{
   padding-right: 15px;
+}
+
+/* About page cards */
+.card-one {
+  width: 100%;
+  height: 100%;
+  padding: 40px;
+  justify-content: center;
+  margin-top: 10px;
+}
+.card-two {
+  width: 100%;
+  height: 100%;
+  padding: 40px;
+  justify-content: center;
+  margin-top: 10px;
+}
+.card-three {
+  width: 100%;
+  height: 100%;
+  padding: 40px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.card-deck {
+  margin-top: 25px;
+  margin-bottom: 100px;
+}
+
+.image-footer {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.card-img-overlay {
+  text-align: center;
+  margin-top: 200px;
 }

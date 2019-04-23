@@ -17,7 +17,6 @@ class Nav extends Component {
 
   render() {
     return (
-
       <Navbar bg="dark" variant="dark" expand="lg" fixed="sticky">
         <Container className="justify-content-center">
           <Navbar.Brand className = "brand-name">
@@ -36,7 +35,6 @@ class Nav extends Component {
           </div> */}
         </Container>
       </Navbar>
-
     )
   }
 }

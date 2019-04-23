@@ -1,7 +1,7 @@
 ###### Kick A Coders present ######
 # Workouts #
 
-**Workouts** helps you organize and save exercises saved through Pinterest, fitness Coaches, or trainings you’ve created yourself that you enjoy and work well for your body. 
+**Workouts** helps you organize exercises saved through Pinterest, fitness Coaches, or trainings you’ve created yourself that you enjoy and work well for your body. 
 
 Minimal equipment is used with **Workouts** allowing you to easily squeeze exercise into your daily schedule and reach your overall fitness goals. 
 
