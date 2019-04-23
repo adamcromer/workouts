@@ -9,7 +9,7 @@ Enjoy exercising the way **you** like with **Workouts**!
 
 ## Technologies Used ##
 
-This project uses a `Node and Express Web Server` backed by a `Mongo Database` using `Mongoose`. Both `GET and POST routes` are used for retrieving and adding new data. **Workouts** is deployed using `Heroku` and `JAWSdb`.
+This project uses a `Node and Express Web Server` backed by a `Mongo Database` using `Mongoose`. Both `GET and POST routes` are used for retrieving and adding new data. **Workouts** is deployed using `Heroku` and `MLab`.
 
 ## Project Tutorial ## 
 
