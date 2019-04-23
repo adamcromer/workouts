@@ -14,20 +14,20 @@ class ExerciseForm extends Component {
 
     tags = ["Cardio", "Muscle Building", "Full-Body", "Hiit", "Flexibility & Stretching",
         "Dumbbells", "Resistance Bands", "Kettlebell", "Sliders", "Weighted Gloves", "Balance Ball",
-        "Mat", "Medicine Ball", "Jumprope", "Foam Roller"];
+        "Mat", "Medicine Ball", "Jumprope", "Foam Roller", "Yoga"];
 
     constructor(props) {
         super(props);
         this.state = {
             repsOrTime: "",
-            tags: this.tags.reduce(
+            tags: this.tags.sort().reduce(
                 (tags, tag) => ({
                     ...tags,
                     [tag]: false
                 }),
                 {}
             ),
-            targets: this.targets.reduce(
+            targets: this.targets.sort().reduce(
                 (targets, target) => ({
                     ...targets,
                     [target]: false
