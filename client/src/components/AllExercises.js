@@ -3,7 +3,7 @@ import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import API from "../utils/API";
 
-class List extends Component {
+class AllExercises extends Component {
 
     state = {
         exercises: []
@@ -11,6 +11,7 @@ class List extends Component {
 
     componentDidMount = () => {
         this.loadExercises();
+        console.log(this.state);
     }
 
     loadExercises = () => {
@@ -62,4 +63,4 @@ class List extends Component {
         );
     }
 }
-export default List;
+export default AllExercises;

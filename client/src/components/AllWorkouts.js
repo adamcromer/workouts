@@ -43,7 +43,7 @@ class List extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {this.state.exercises.map(exercise =>
+                        {/* {this.state.exercises.map(exercise =>
                             <tr key={exercise._id}>
                                 <td>{exercise.title}</td>
                                 <td>{exercise.description}</td>
@@ -53,7 +53,7 @@ class List extends Component {
                                     <Button href={`/workouts/${exercise._id}`} variant="warning" size="lg"><i className="fas fa-eye"></i></Button>
                                 </td>
                             </tr>
-                        )}
+                        )} */}
                     </tbody>
                 </Table>
             </div>
