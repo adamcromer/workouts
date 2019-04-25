@@ -5,10 +5,7 @@ import Cover from '../components/Cover';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
-
 import Image from 'react-bootstrap/Image';
-
-import LoginButtons from '../components/LoginButtons';
 
 class About extends Component {
 
@@ -69,7 +66,7 @@ class About extends Component {
                         <Card.ImgOverlay>
                             <Card.Title><h1>Join Workouts and Get Moving</h1></Card.Title>
                             <br />
-                            <Button href="/SignUp" variant="warning">Sign Up Now</Button>
+                            <Button href="/signup" variant="warning">Sign Up Now</Button>
                         </Card.ImgOverlay>
                         </Card>
                 </Row>
