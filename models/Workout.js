@@ -12,9 +12,16 @@ const workoutSchema = new Schema({
         required: true,
         trim: true
     },
+    description: {
+        type: String,
+        required: true,
+        trim: true
+    },
     difficulty: {
         type: Number,
-        trim: true
+        trim: true,
+        min: 1,
+        max: 5
     },
     duration: {
         type: Number,

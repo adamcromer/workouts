@@ -27,9 +27,8 @@ class AllExercises extends Component {
     render() {
         return (
             <div className="list">
-                <h1>List</h1>
-                List of All Exercises or Workouts
-                        <Table striped bordered hover variant="dark">
+                <h1>List of All Workouts</h1>
+                <Table striped bordered hover variant="dark">
                     <thead>
                         <tr>
                             <th>Title</th>

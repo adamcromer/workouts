@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
+<<<<<<< HEAD
+// import List from "../components/List";
+=======
 import SingleWorkout from "../components/SingleWorkout";
+>>>>>>> d973079e5648ad02166122b1a2722568b32c3ae5
 import SingleExercise from "../components/SingleExercise";
 import AllExercises from "../components/AllExercises";
 import AllWorkouts from "../components/AllWorkouts";
@@ -25,7 +29,7 @@ class Workout extends Component {
 
     componentDidMount() {
         API.findUser(this.props.email)
-            .then(res => this.setState({ user: res.data }))
+            .then(res => this.setState({ user: res.data }), )
     }
 
     componentDidUpdate() {
