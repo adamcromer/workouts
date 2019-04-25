@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
-import List from "../components/List";
+// import List from "../components/List";
 import SingleExercise from "../components/SingleExercise";
 import AllExercises from "../components/AllExercises";
 import Container from 'react-bootstrap/Container';
@@ -24,7 +24,7 @@ class Workout extends Component {
 
     componentDidMount() {
         API.findUser(this.props.email)
-            .then(res => this.setState({ user: res.data }))
+            .then(res => this.setState({ user: res.data }), )
     }
 
     componentDidUpdate() {

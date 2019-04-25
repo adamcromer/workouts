@@ -20,7 +20,7 @@ class ExerciseForm extends Component {
         super(props);
         this.state = {
             validated: false,
-            repsOrTime: "",
+            // repsOrTime: "",
             tags: this.tags.sort().reduce(
                 (tags, tag) => ({
                     ...tags,
@@ -133,8 +133,8 @@ class ExerciseForm extends Component {
             createdBy: this.props.user[0].email,
             description: this.state.description,
             tutorial: this.state.tutorial,
-            type: this.state.repsOrTime,
-            length: this.state.length,
+            // type: this.state.repsOrTime,
+            time: this.state.time,
             target: Object.keys(this.state.targets)
                 .filter(target => this.state.targets[target]),
             tags: Object.keys(this.state.tags)
@@ -168,42 +168,17 @@ class ExerciseForm extends Component {
                                 </Form.Group>
                                 <Form.Group controlId="tutorial">
                                     <Form.Label>Tutorial</Form.Label>
-                                    <Form.Control as="textarea" rows="3" name="tutorial" />
+                                    <Form.Control type="url" name="tutorial" />
+                                    <Form.Text className="text-muted">
+                                        If possible, please enter a link to a tutorial video.
+                                    </Form.Text>
                                 </Form.Group>
-                                <Form.Group controlId="type">
-                                    <Form.Label>Type</Form.Label>
-                                    {['radio'].map(type => (
-                                        <div key={`custom-inline-${type}`} className="mb-3">
-                                            <div className="flex-form">
-                                                <Form.Check
-                                                    custom
-                                                    inline
-                                                    label="Reps"
-                                                    value="Reps"
-                                                    name="repsOrTime"
-                                                    type={type}
-                                                    id={`custom-inline-${type}-1`}
-                                                    checked={this.state.repsOrTime === "Reps"}
-                                                    onChange={this.handleOptionChange}
-                                                    className="form-check-input"
-                                                />
-                                                <Form.Check
-                                                    custom
-                                                    inline
-                                                    label="Time"
-                                                    value="Time"
-                                                    name="repsOrTime"
-                                                    type={type}
-                                                    id={`custom-inline-${type}-2`}
-                                                    checked={this.state.repsOrTime === "Time"}
-                                                    onChange={this.handleOptionChange}
-                                                    className="form-check-input"
-                                                />
-                                            </div>
-                                        </div>
-                                    ))}
-                                    <Form.Label>Length</Form.Label>
-                                    <Form.Control as="textarea" rows="1" name="length" />
+                                <Form.Group controlId="time">
+                                    <Form.Label>Time (in Seconds)</Form.Label>
+                                    <Form.Control type="number" min="10" max="300" name="time" />
+                                    <Form.Text className="text-muted">
+                                        Exercises must be between 10 and 5 minutes (300 seconds).
+                                    </Form.Text>
                                 </Form.Group>
                                 <Form.Group controlId="target-area" name="target">
                                     <Form.Label>Target Area</Form.Label>

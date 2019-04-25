@@ -24,18 +24,19 @@ const exerciseSchema = new Schema({
     },
     tutorial: {
         type: String,
-        required: true,
         trim: true
     },
-    type: {
-        type: String, // reps or time?
+    // type: {
+    //     type: String, // reps or time?
+    //     required: true,
+    //     trim: true,
+    // },
+    time: {
+        type: Number,
         required: true,
         trim: true,
-    },
-    length: {
-        type: String,
-        required: true,
-        trim: true
+        min: 10,
+        max: 300
     },
     target: [{
         type: String,
