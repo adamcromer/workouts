@@ -1,7 +1,8 @@
 /*Navbar Styling*/
 nav {
   margin-bottom: 1.5em;
-  border-bottom: 1px solid black;
+  box-shadow: 1px solid black;
+  /* border-bottom: 1px solid black; */
 }
 .navbar-brand {
   display: flex;

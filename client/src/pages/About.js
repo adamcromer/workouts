@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card';
 import CardDeck from 'react-bootstrap/CardDeck';
 import Cover from '../components/Cover';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
+
 import Image from 'react-bootstrap/Image';
 
 import LoginButtons from '../components/LoginButtons';
@@ -23,7 +23,7 @@ class About extends Component {
                     <div className="about-description">
                         <h1 className="about-heading">Workouts</h1>
                         <hr />
-                        <h5>Workouts helps you organize exercises saved through Pinterest, fitness Coaches, or trainings you’ve created that you enjoy and work well for your body.</h5>
+                        <h5>Workouts helps you organize exercises you’ve created, enjoy, and work well for your body.</h5>
                         <br />
                         <h5>Minimal equipment is used with Workouts allowing you to easily squeeze exercise into your daily schedule and reach your overall fitness goals.</h5> 
                         <br />
@@ -68,6 +68,7 @@ class About extends Component {
                         <Card.Img className="image-footer" src="/images/workoutrun.jpg" alt="Card image" />
                         <Card.ImgOverlay>
                             <Card.Title><h1>Join Workouts and Get Moving</h1></Card.Title>
+                            <br />
                             <Button href="/SignUp" variant="warning">Sign Up Now</Button>
                         </Card.ImgOverlay>
                         </Card>
