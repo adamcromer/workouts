@@ -5,7 +5,7 @@ import Cover from '../components/Cover';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
-import Image from 'react-bootstrap/Image';
+// import Image from 'react-bootstrap/Image';
 
 class About extends Component {
 
@@ -26,34 +26,34 @@ class About extends Component {
                         <br />
                         <h5>Enjoy exercising the way you like with Workouts!</h5>
                         </div>
-                </Row>
-                <div className="cards">
-                <Row>
-                <CardDeck>
-                    <Card bg="dark" text="white" style={{ width: '18rem' }}>
-                        <Card.Img className="card-one" variant="top" src="/images/Save.png" thumbnail/>
-                        <Card.Body>
-                        <Card.Title>Save Your Exercises</Card.Title>
-                        <Card.Text>
-                            Keep your favorite exercises all in one place.
+                    </Row>
+                    <div className="cards">
+                        <Row>
+                            <CardDeck>
+                                <Card bg="dark" text="white" style={{ width: '18rem' }}>
+                                    <Card.Img className="card-one" variant="top" src="/images/Save.png" thumbnail />
+                                    <Card.Body>
+                                        <Card.Title>Save Your Exercises</Card.Title>
+                                        <Card.Text>
+                                            Keep your favorite exercises all in one place.
                         </Card.Text>
-                        </Card.Body>
-                    </Card>
-                    <Card bg="dark" text="white" style={{ width: '18rem' }}>
-                        <Card.Img className="card-two" variant="top" src="/images/Checkmark.png" thumbnail/>
-                        <Card.Body> 
-                        <Card.Title>Never Miss a Workout</Card.Title>
-                        <Card.Text>
-                            These workouts are yours. You created them. Get it done.
+                                    </Card.Body>
+                                </Card>
+                                <Card bg="dark" text="white" style={{ width: '18rem' }}>
+                                    <Card.Img className="card-two" variant="top" src="/images/Checkmark.png" thumbnail />
+                                    <Card.Body>
+                                        <Card.Title>Never Miss a Workout</Card.Title>
+                                        <Card.Text>
+                                            These workouts are yours. You created them. Get it done.
                         </Card.Text>
-                        </Card.Body>
-                    </Card>
-                    <Card bg="dark" text="white" style={{ width: '18rem' }}>
-                        <Card.Img className="card-three" variant="top" src="/images/Countdown.png" thumbnail/>
-                        <Card.Body>
-                        <Card.Title>Track Your Time</Card.Title>
-                        <Card.Text>
-                            Use our countdown timer to help with intervals.
+                                    </Card.Body>
+                                </Card>
+                                <Card bg="dark" text="white" style={{ width: '18rem' }}>
+                                    <Card.Img className="card-three" variant="top" src="/images/Countdown.png" thumbnail />
+                                    <Card.Body>
+                                        <Card.Title>Track Your Time</Card.Title>
+                                        <Card.Text>
+                                            Use our countdown timer to help with intervals.
                         </Card.Text>
                         </Card.Body>
                     </Card>
@@ -69,14 +69,10 @@ class About extends Component {
                             <Button href="/signup" variant="warning">Sign Up Now</Button>
                         </Card.ImgOverlay>
                         </Card>
-                </Row>
-            </Col>
-     </div>
-    );
-  }
+                    </Row>
+                </Col>
+            </div>
+        );
+    }
 }
 export default About;
-
-
-
-
