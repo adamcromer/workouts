@@ -23,36 +23,34 @@ class List extends Component {
             .catch(err => console.log(err));
     }
 
+    addToWorkouts = (id) => {
+        console.log(id);
+    }
+
     render() {
         return (
             <div className="list">
                 <h1>List</h1>
-                List of All Exercises or Workouts
+                List of Workouts
                         <Table striped bordered hover variant="dark">
                     <thead>
                         <tr>
                             <th>Title</th>
                             <th>Description</th>
-                            <th>Tutorial</th>
                             <th>Type</th>
                             <th>Length</th>
-                            <th>Target</th>
-                            <th>Tags</th>
                             <th>View</th>
                         </tr>
                     </thead>
                     <tbody>
                         {this.state.exercises.map(exercise =>
-                            <tr>
+                            <tr key={exercise._id}>
                                 <td>{exercise.title}</td>
                                 <td>{exercise.description}</td>
-                                <td>{exercise.tutorial}</td>
                                 <td>{exercise.type}</td>
                                 <td>{exercise.length}</td>
-                                <td>{(exercise.target).join(", ")}</td>
-                                <td>{(exercise.tags).join(", ")}</td>
                                 <td>
-                                    <Button href={`/exercise/view/${exercise._id}`}variant="warning" size="lg"><i className="fas fa-eye"></i></Button>
+                                    <Button href={`/workouts/views/${exercise._id}`} variant="warning" size="lg"><i className="fas fa-eye"></i></Button>
                                 </td>
                             </tr>
                         )}

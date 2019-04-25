@@ -5,19 +5,15 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import API from "../utils/API";
 
-class SingleExercise extends Component {
+class SingleWorkout extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            exercise: {}
-        }
-    }
+    state = {
+        workout: "",
+        exercises: []
+    };
 
     componentDidMount = () => {
-        // const id = this.props.match.params;
-        console.log(this.props);
-        this.loadExercise("5cbb3fb47bf71c5b94e4271c");
+        // const { id } = this.props.match.params
     }
 
     loadExercise = (id) => {
@@ -39,17 +35,13 @@ class SingleExercise extends Component {
                     <h1>View</h1>
                     <Row>
                         <Col>
-                            View of Single Exercise or Workout
+                            View of Single Workout
                             <ReactCountdownClock />
                             <h1>{this.state.exercise.title}</h1>
                             <p>{this.state.exercise.description}</p>
                             <p>{this.state.exercise.tutorial}</p>
                             <h2>{this.state.exercise.type}</h2>
                             <h2>{this.state.exercise.length}</h2>
-                            {/* <h2>{(this.state.exercise.target).join(", ")}</h2>
-                            <h2>{(this.state.exercise.tags).join(", ")}</h2> */}
-                            <h2>{(this.state.exercise.target)}</h2>
-                            <h2>{(this.state.exercise.tags)}</h2>
                         </Col>
                     </Row>
                 </div>
@@ -57,4 +49,4 @@ class SingleExercise extends Component {
         );
     }
 }
-export default SingleExercise;
+export default SingleWorkout;
