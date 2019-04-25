@@ -52,7 +52,7 @@ class List extends Component {
                                 <td>{(exercise.target).join(", ")}</td>
                                 <td>{(exercise.tags).join(", ")}</td>
                                 <td>
-                                    <Button href={`/exercise/view/${exercise._id}`}variant="warning" size="lg"><i className="fas fa-eye"></i></Button>
+                                    <Button href={`/exercise/${exercise._id}`}variant="warning" size="lg"><i className="fas fa-eye"></i></Button>
                                 </td>
                             </tr>
                         )}

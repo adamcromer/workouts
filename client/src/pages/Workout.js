@@ -46,22 +46,22 @@ class Workout extends Component {
                             </Col>
                             <Col md={8}>
                                 <Switch>
-                                    <Route exact path={`${path}/exercise/new`} 
-                                    render={(props) => <ExerciseForm {...props} 
-                                    user={this.state.user} />} />
-                                    <Route exact path={`${path}/new`} 
+                                    <Route exact path={"/workout/new"} 
                                     render={(props) => <WorkoutForm {...props} 
                                     user={this.state.user} />} />
-                                    <Route path={`${path}/exercise/new`} 
+                                    <Route path={"/workout/:id"} 
                                     render={(props) => <SingleWorkout {...props} 
                                     user={this.state.user} />} />
-                                    <Route exact path={`${path}/all`}  
+                                    <Route exact path={"/workout/all"}  
                                     render={(props) => <AllWorkouts {...props} 
                                     user={this.state.user} />} />
-                                    <Route path={`${path}/exercise/view/:id`}
+                                    <Route exact path={"/exercise/new"} 
+                                    render={(props) => <ExerciseForm {...props} 
+                                    user={this.state.user} />} />
+                                    <Route path={"/exercise/:id"}
                                     render={(props) => <SingleExercise {...props} 
                                     user={this.state.user} />} />
-                                    <Route exact path={`${path}/exercise/all`}
+                                    <Route exact path={"/exercise/all"}
                                     render={(props) => <AllExercises {...props} 
                                     user={this.state.user} />} />
                                 </Switch>

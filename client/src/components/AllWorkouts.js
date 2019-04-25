@@ -50,7 +50,7 @@ class List extends Component {
                                 <td>{exercise.type}</td>
                                 <td>{exercise.length}</td>
                                 <td>
-                                    <Button href={`/workouts/views/${exercise._id}`} variant="warning" size="lg"><i className="fas fa-eye"></i></Button>
+                                    <Button href={`/workouts/${exercise._id}`} variant="warning" size="lg"><i className="fas fa-eye"></i></Button>
                                 </td>
                             </tr>
                         )}
