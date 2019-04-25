@@ -33,6 +33,7 @@ class WorkoutForm extends Component {
     }
 
     newWorkout = () => {
+        console.log(this.state.description)
         API.addWorkoutToCreator(this.props.user[0]._id, {
             title: this.state.title,
             createdBy: this.props.user[0].email,

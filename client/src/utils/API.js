@@ -9,7 +9,7 @@ export default {
         return axios.get('api/exercise/' + id);
     },
     getAllWorkouts: function() {
-        return axios.get('/api/workouts');
+        return axios.get('/api/workout');
     },
     getOneWorkout: function(id) {
         return axios.get('api/workout/' + id);
@@ -21,7 +21,7 @@ export default {
         return axios.post('/api/exercise', exerciseData);
     },
     saveWorkout: function(workoutData) {
-        return axios.post('/api/workouts', workoutData);
+        return axios.post('/api/workout', workoutData);
     },
     addWorkoutToCreator: function(id, workoutData) {
         return axios.post('/api/user/create/' + id, workoutData);

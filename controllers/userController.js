@@ -86,6 +86,7 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   addWorkoutToCreator: function (req, res) {
+    console.log(req.body)
     db.Workout.create(req.body)
       .then(function (dbWorkout) {
         console.log('this is the db workout:');
