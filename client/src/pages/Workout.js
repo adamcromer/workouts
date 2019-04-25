@@ -1,14 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
-<<<<<<< HEAD
 // import List from "../components/List";
-=======
-import SingleWorkout from "../components/SingleWorkout";
->>>>>>> d973079e5648ad02166122b1a2722568b32c3ae5
 import SingleExercise from "../components/SingleExercise";
 import AllExercises from "../components/AllExercises";
-import AllWorkouts from "../components/AllWorkouts";
 import Container from 'react-bootstrap/Container';
 import ExerciseForm from '../components/ExerciseForm';
 import WorkoutForm from '../components/WorkoutForm';
@@ -29,7 +24,7 @@ class Workout extends Component {
 
     componentDidMount() {
         API.findUser(this.props.email)
-            .then(res => this.setState({ user: res.data }), )
+            .then(res => this.setState({ user: res.data }))
     }
 
     componentDidUpdate() {
@@ -37,9 +32,6 @@ class Workout extends Component {
     }
 
     render() {
-        const { path } = this.props.match;
-        console.log(path);
-
         return (
             <Router>
                 <Container>
@@ -50,23 +42,17 @@ class Workout extends Component {
                             </Col>
                             <Col md={8}>
                                 <Switch>
-                                    <Route exact path={"/workout/new"} 
+                                    <Route exact path="/exercise/new" 
+                                    render={(props) => <ExerciseForm {...props} 
+                                    user={this.state.user} />} />
+                                    <Route exact path="/workout/new" 
                                     render={(props) => <WorkoutForm {...props} 
                                     user={this.state.user} />} />
-                                    <Route exact path={"/workout/all"}  
-                                    render={(props) => <AllWorkouts {...props} 
-                                    user={this.state.user} />} />
-                                    <Route path={"/workout/:id"} 
-                                    render={(props) => <SingleWorkout {...props} 
-                                    user={this.state.user} />} />
-                                    <Route exact path={"/exercise/new"} 
-                                    render={(props) => <ExerciseForm {...props} 
-                                    user={this.state.user} />} />                   
-                                    <Route exact path={"/exercise/all"}
-                                    render={(props) => <AllExercises {...props} 
-                                    user={this.state.user} />} />
-                                    <Route path={"/exercise/:id"}
+                                    <Route exact path="/exercise/view" 
                                     render={(props) => <SingleExercise {...props} 
+                                    user={this.state.user} />} />
+                                    <Route exact path="/exercise/all" 
+                                    render={(props) => <AllExercises {...props} 
                                     user={this.state.user} />} />
                                 </Switch>
                             </Col>
