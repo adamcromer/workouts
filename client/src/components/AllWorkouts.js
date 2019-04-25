@@ -3,7 +3,7 @@ import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import API from "../utils/API";
 
-class AllExercises extends Component {
+class List extends Component {
 
     state = {
         exercises: []
@@ -11,7 +11,6 @@ class AllExercises extends Component {
 
     componentDidMount = () => {
         this.loadExercises();
-        console.log(this.state);
     }
 
     loadExercises = () => {
@@ -24,43 +23,41 @@ class AllExercises extends Component {
             .catch(err => console.log(err));
     }
 
+    addToWorkouts = (id) => {
+        console.log(id);
+    }
+
     render() {
         return (
             <div className="list">
                 <h1>List</h1>
-                List of All Exercises or Workouts
+                List of Workouts
                         <Table striped bordered hover variant="dark">
                     <thead>
                         <tr>
                             <th>Title</th>
                             <th>Description</th>
-                            <th>Tutorial</th>
                             <th>Type</th>
                             <th>Length</th>
-                            <th>Target</th>
-                            <th>Tags</th>
                             <th>View</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {this.state.exercises.map(exercise =>
-                            <tr>
+                        {/* {this.state.exercises.map(exercise =>
+                            <tr key={exercise._id}>
                                 <td>{exercise.title}</td>
                                 <td>{exercise.description}</td>
-                                <td>{exercise.tutorial}</td>
                                 <td>{exercise.type}</td>
                                 <td>{exercise.length}</td>
-                                <td>{(exercise.target).join(", ")}</td>
-                                <td>{(exercise.tags).join(", ")}</td>
                                 <td>
-                                    <Button href={`/exercise/${exercise._id}`}variant="warning" size="lg"><i className="fas fa-eye"></i></Button>
+                                    <Button href={`/workouts/${exercise._id}`} variant="warning" size="lg"><i className="fas fa-eye"></i></Button>
                                 </td>
                             </tr>
-                        )}
+                        )} */}
                     </tbody>
                 </Table>
             </div>
         );
     }
 }
-export default AllExercises;
+export default List;
