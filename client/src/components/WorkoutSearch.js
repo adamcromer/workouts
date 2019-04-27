@@ -7,13 +7,13 @@ import Button from 'react-bootstrap/Button';
 import Spinner from 'react-bootstrap/Spinner';
 import API from "../utils/API";
 
-class ExerciseSearch extends Component {
+class WorkoutSearch extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
             searchTerm: '',
-            exercises: []
+            workouts: []
         };
     }
 
@@ -21,7 +21,7 @@ class ExerciseSearch extends Component {
         const { name, value } = event.target;
         this.setState({
             [name]: value,
-            exercises: ''
+            workouts: ''
         }, this.searchForTerm(this.state.searchTerm));
     }
 
@@ -31,10 +31,10 @@ class ExerciseSearch extends Component {
     }
 
     searchForTerm = (term) => {
-        API.searchExercises(term)  
+        API.searchWorkouts(term)
             .then(res =>
                 this.setState({
-                    exercises: res.data
+                    workouts: res.data
                 }, console.log(this.state))
             )
             .catch(err => console.log(err));
@@ -46,12 +46,12 @@ class ExerciseSearch extends Component {
             <div className="workout-form" >
                 <Container>
                     <Card bg="dark" text="white">
-                        <Card.Header variant="dark" as="h2">Search for an Exercise</Card.Header>
+                        <Card.Header variant="dark" as="h2">Search for a Workout</Card.Header>
                         <Card.Body>
                             <Form inline
                                 onChange={this.handleInputChange}
                                 className="mb-2">
-                                <Form.Control type="text" name="searchTerm" placeholder="Search" className="mr-sm-2" style={{ width: 'calc(75% - 0.5rem)' }}/>
+                                <Form.Control type="text" name="searchTerm" placeholder="Search" className="mr-sm-2" style={{ width: 'calc(75% - 0.5rem)' }} />
                                 <Button variant="warning" onClick={this.handleSubmit} style={{ width: '25%' }}>Search</Button>
                             </Form>
 
@@ -60,27 +60,18 @@ class ExerciseSearch extends Component {
                                     <tr>
                                         <th>Title</th>
                                         <th>Description</th>
-                                        <th>Tutorial</th>
-                                        <th>Target</th>
-                                        <th>Tags</th>
+                                        <th>Difficulty</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {this.state.exercises ? this.state.exercises.map(exercise =>
-                                        <tr key={exercise._id}>
-                                            <td>{exercise.title}</td>
-                                            <td>{exercise.description}</td>
-                                            <td>
-                                                {exercise.tutorial ?
-                                                    <Button href={exercise.tutorial} target="_blank" variant="warning">Tutorial</Button> :
-                                                    <Button variant="secondary" disabled>Tutorial</Button>
-                                                }
-                                            </td>
-                                            <td>{(exercise.target).join(", ")}</td>
-                                            <td>{(exercise.tags).join(", ")}</td>
+                                    {this.state.workouts ? this.state.workouts.map(workout =>
+                                        <tr key={workout._id}>
+                                            <td>{workout.title}</td>
+                                            <td>{workout.description}</td>
+                                            <td>{workout.difficulty}</td>
                                         </tr>
                                     ) : 
-                                    (<tr><td colspan="5" style={{ textAlign: 'center' }}>
+                                    (<tr><td colspan="3" style={{ textAlign: 'center' }}>
                                         <Spinner animation="border" variant="warning" />
                                     </td></tr>)}
                                 </tbody>
@@ -94,4 +85,4 @@ class ExerciseSearch extends Component {
     }
 }
 
-export default ExerciseSearch;
+export default WorkoutSearch;
