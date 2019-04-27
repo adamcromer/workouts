@@ -27,14 +27,14 @@ class AllExercises extends Component {
         return (
             <div className="list">
                 <h1>Exercises</h1>
-                <Table striped bordered hover variant="dark">
+                <Table striped bordered hover variant="dark" responsive>
                     <thead>
                         <tr>
                             <th>Title</th>
                             <th>Description</th>
                             <th>Tutorial</th>
-                            <th>Type</th>
-                            <th>Length</th>
+                            <th>Time</th>
+                            {/* <th>Length</th> */}
                             <th>Target</th>
                             <th>Tags</th>
                             {/* <th>View</th> */}
@@ -42,12 +42,17 @@ class AllExercises extends Component {
                     </thead>
                     <tbody>
                         {this.state.exercises.map(exercise =>
-                            <tr>
+                            <tr key={exercise._id}>
                                 <td>{exercise.title}</td>
                                 <td>{exercise.description}</td>
-                                <td>{exercise.tutorial}</td>
-                                <td>{exercise.type}</td>
-                                <td>{exercise.length}</td>
+                                <td>
+                                    {exercise.tutorial ? 
+                                        <Button href={exercise.tutorial} target="_blank" variant="warning">Tutorial</Button> : 
+                                        <Button variant="secondary" disabled>Tutorial</Button> 
+                                    }
+                                </td>
+                                <td>{exercise.time} seconds</td>
+                                {/* <td>{exercise.length}</td> */}
                                 <td>{(exercise.target).join(", ")}</td>
                                 <td>{(exercise.tags).join(", ")}</td>
                                 {/* <td>
