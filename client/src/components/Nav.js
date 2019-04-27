@@ -17,8 +17,8 @@ class Nav extends Component {
 
   render() {
     return (
-      <Navbar bg="dark" variant="dark" expand="lg" fixed="sticky" className="justify-content-center">
-        {/* <Container className="justify-content-center"> */}
+      <Navbar bg="dark" variant="dark" expand="lg" fixed="top" style={{marginBot: 5}}>
+        <Container className="justify-content-center">
           <Navbar.Brand className = "brand-name">
           <a className = "navbar-brand" href="/">Workouts
           <img className="nav-logo" alt="Workout Logo" src="/images/Workout-Favicon-Light.png" style={{width:55, marginTop: -5}} />
@@ -33,7 +33,7 @@ class Nav extends Component {
               </div>
             </Navbar.Collapse>
           </div> */}
-        {/* </Container> */}
+        </Container>
       </Navbar>
     )
   }
