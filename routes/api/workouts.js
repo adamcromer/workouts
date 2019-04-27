@@ -5,6 +5,9 @@ router.route('/')
     .get(workoutController.findAll)
     .post(workoutController.create);
 
+router.route('/search/:term')
+    .get(workoutController.findByTitle);
+
 router.route('/:id')
     .post(workoutController.addExerciseToWorkout)
     .put(workoutController.update)

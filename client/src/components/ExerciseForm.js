@@ -140,8 +140,12 @@ class ExerciseForm extends Component {
             tags: Object.keys(this.state.tags)
                 .filter(tag => this.state.tags[tag])
         }).then(() => {
-            console.log("Saved new Exercise");
+            this.clearForm();
         }).catch(err => console.log(err));
+    }
+
+    clearForm = () => { 
+        this.setState({ validated: false }, document.getElementById("exercise-form").reset());
     }
 
     render() {
@@ -157,7 +161,8 @@ class ExerciseForm extends Component {
                                 validated={validated}
                                 onChange={this.handleInputChange}
                                 onSubmit={e => this.handleSubmit(e)}
-                                className="exercise-form-padding">
+                                className="exercise-form-padding"
+                                id="exercise-form">
                                 <Form.Group controlId="title">
                                     <Form.Label>Title</Form.Label>
                                     <Form.Control as="textarea" rows="1" name="title" />

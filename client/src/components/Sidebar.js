@@ -10,25 +10,50 @@ class Sidebar extends Component {
         this.state = {
             isAuth: true,
             username: '',
-            email: ''
+            email: '',
+            userLoaded: false
         }
     }
 
-    componentDidUpdate() {
+    logout = () => {
+        document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
+    }
+
+    componentDidUpdate(prevProps, prevState) {
         console.log(this.props.user[0])
+        if (prevProps.user[0] !== this.props.user[0]) {
+            this.setState({ userLoaded: true });
+        }
     }
 
     render() {
         return (
             <Card bg="dark" text="white" style={{ width: '100%' }}>
                 <div className="sidebar">
-                <Card.Header as="h5">USERNAME</Card.Header>
+                <Card.Header as="h5">{
+                    this.state.userLoaded ? `@${this.props.user[0].username}` : null
+                }</Card.Header>
                 <Card.Body>
                     <ButtonGroup vertical style={{ width: '100%' }}>
-                        <Button href="/workout/all" variant="warning" size="lg">View Workouts</Button>
-                        <Button href="/workout/new" variant="warning" size="lg"><i className="fas fa-plus fa-fw"></i>Workout</Button>
-                        <Button href="/exercise/all" variant="warning" size="lg">View Exercises</Button>
-                        <Button href="/exercise/new" variant="warning" size="lg"><i className="fas fa-plus fa-fw"></i>Exercise</Button>
+                        <Button href="/workout/all" variant="warning" size="lg">
+                            <i className="fas fa-eye fa-fw"></i> View Workouts
+                        </Button>
+                        <Button href="/workout/new" variant="warning" size="lg">
+                            <i className="fas fa-plus fa-fw"></i> New Workout
+                        </Button>
+                        <Button href="/workout/search" variant="warning" size="lg">
+                            <i className="fas fa-search"></i> Find Workouts
+                        </Button>
+                        <Button href="/exercise/all" variant="warning" size="lg">
+                            <i className="fas fa-eye fa-fw"></i> View Exercises
+                        </Button>
+                        <Button href="/exercise/search" variant="warning" size="lg">
+                            <i className="fas fa-search"></i> Find Exercises
+                        </Button>
+                        <Button href="/exercise/new" variant="warning" size="lg">
+                            <i className="fas fa-plus fa-fw"></i> New Exercise
+                        </Button>
+                        <Button href="/" variant="outline-warning" size="lg" onClick={this.logout}>Log Out</Button>
                     </ButtonGroup>
                 </Card.Body>
                 </div>

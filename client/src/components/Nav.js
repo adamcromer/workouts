@@ -20,7 +20,7 @@ class Nav extends Component {
       <Navbar bg="dark" variant="dark" expand="lg" fixed="stick">
         <Container className="justify-content-center">
           <Navbar.Brand className = "brand-name">
-          <a className = "navbar-brand" href="/">
+          <a className = "navbar-brand" href="/">Workins
           <img className="nav-logo" alt="Workout Logo" src="/images/Workout-Favicon-Light.png" style={{width:55, marginTop: -5}} />
           Workouts
           </a>

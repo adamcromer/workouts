@@ -7,7 +7,7 @@ class Title extends React.Component {
         return (
 
             <div className = "title">
-                <h1>Workouts</h1>
+                <h1>Workins</h1>
             </div>
         );
     }

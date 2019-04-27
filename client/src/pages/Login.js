@@ -93,7 +93,7 @@ class Login extends Component {
             <div className="login">
                 <Container className = "login-container">
                 <Card bg="dark" text="white">
-                <Card.Header variant = "dark" as="h2">Log In to Workouts</Card.Header>
+                <Card.Header variant = "dark" as="h2">Log In to Workins</Card.Header>
                 <Card.Body>
                     <Form 
                         noValidate
