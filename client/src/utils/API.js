@@ -9,19 +9,20 @@ export default {
         return axios.get('api/exercise/' + id);
     },
     getAllWorkouts: function() {
-        return axios.get('/api/workouts');
+        return axios.get('/api/workout');
+    },
+    getWorkoutsByUser: function(userWorkoutIds) {
+        console.log(userWorkoutIds);
+        return axios.get('/api/workout/find', userWorkoutIds)
     },
     getOneWorkout: function(id) {
-        return axios.get('api/workout/' + id);
+        return axios.get('/api/workout/' + id);
     },
     findUser: function(userEmail) {
         return axios.get('/api/user/' + userEmail);
     },
     saveExercise: function(exerciseData) {
         return axios.post('/api/exercise', exerciseData);
-    },
-    saveWorkout: function(workoutData) {
-        return axios.post('/api/workouts', workoutData);
     },
     addWorkoutToCreator: function(id, workoutData) {
         return axios.post('/api/user/create/' + id, workoutData);
@@ -30,7 +31,7 @@ export default {
         return axios.post('/api/user/add/' + id, workoutId);
     },
     addExerciseToWorkout: function(id, exerciseID) {
-        return axios.post('/api/workout/' + id, exerciseID);
+        return axios.post('/api/workouts/' + id, exerciseID);
     },
     saveUser: function(userData) {
         return axios.post('/api/user', userData);

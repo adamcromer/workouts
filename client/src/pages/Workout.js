@@ -4,6 +4,7 @@ import Sidebar from "../components/Sidebar";
 // import List from "../components/List";
 import SingleExercise from "../components/SingleExercise";
 import AllExercises from "../components/AllExercises";
+import AllWorkouts from "../components/AllWorkouts";
 import Container from 'react-bootstrap/Container';
 import ExerciseForm from '../components/ExerciseForm';
 import WorkoutForm from '../components/WorkoutForm';
@@ -53,6 +54,9 @@ class Workout extends Component {
                                     user={this.state.user} />} />
                                     <Route exact path="/exercise/all" 
                                     render={(props) => <AllExercises {...props} 
+                                    user={this.state.user} />} />
+                                    <Route exact path="/workout/all" 
+                                    render={(props) => <AllWorkouts {...props} 
                                     user={this.state.user} />} />
                                 </Switch>
                             </Col>
