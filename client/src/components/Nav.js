@@ -17,7 +17,7 @@ class Nav extends Component {
 
   render() {
     return (
-      <Navbar bg="dark" variant="dark" expand="lg" fixed="sticky">
+      <Navbar bg="dark" variant="dark" fixed="sticky">
         <Container className="justify-content-center">
           <Navbar.Brand className = "brand-name">
           <a className = "navbar-brand" href="/">Workouts
@@ -40,4 +40,3 @@ class Nav extends Component {
 }
 
 export default Nav;
-
