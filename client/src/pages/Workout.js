@@ -55,7 +55,7 @@ class Workout extends Component {
                                     <Route exact path="/exercise/all" 
                                     render={(props) => <AllExercises {...props} 
                                     user={this.state.user} />} />
-                                    <Route exact path="/workout/all" 
+                                    <Route
                                     render={(props) => <AllWorkouts {...props} 
                                     user={this.state.user} />} />
                                 </Switch>
