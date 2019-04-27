@@ -28,9 +28,7 @@ class App extends Component {
               <Route exact path="/login" component={Login} />
               <Route exact path="/signup" component={SignUp} />
               <Route path="/workout" component={withAuth(Workout)} />
-              {/* <Route exact path="/workout/:id" component={withAuth(Workout)} /> */}
               <Route path="/exercise" component={withAuth(Workout)} />
-              {/* <Route exact path="/exercise/:id" component={withAuth(Workout)} /> */}
               <Route component={Error} />
             </Switch>
         </div>

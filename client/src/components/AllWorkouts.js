@@ -5,8 +5,11 @@ import API from "../utils/API";
 
 class AllWorkouts extends Component {
 
-    state = {
-        workouts: []
+    constructor(props) {
+        super(props);
+        this.state = {
+            workouts: []
+        }
     };
 
     componentDidMount = () => {
@@ -23,21 +26,29 @@ class AllWorkouts extends Component {
             .catch(err => console.log(err));
     }
 
-    // addToUser = (id) => {
-    //     console.log(id);
-    // }
+    addToUser = (workoutId) => {
+        console.log('user', this.props.user[0]._id);
+        console.log('workout', workoutId);
+        API.addWorkoutToUser(this.props.user[0]._id, {
+            id: workoutId
+        })
+        .then(() =>
+            console.log('Added to User')
+        )
+        .catch(err => console.log(err));
+    }
 
     render() {
         return (
             <div className="list">
                 <h1>List of Workouts</h1>
-                <Table striped bordered hover variant="dark">
+                <Table striped bordered hover variant="dark" responsive>
                     <thead>
                         <tr>
                             <th>Title</th>
                             <th>Description</th>
                             <th>Difficulty</th>
-                            <th>View</th>
+                            <th>Save</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -47,7 +58,11 @@ class AllWorkouts extends Component {
                                 <td>{workout.description}</td>
                                 <td>{workout.difficulty}</td>
                                 <td>
-                                    <Button href={`/workout/${workout._id}`} variant="warning" size="lg"><i className="fas fa-eye"></i></Button>
+                                <Button 
+                                    id={workout._id} 
+                                    onClick={e => this.setState({ modalShow: true, selectedWorkout: e.target.id }, this.addToUser(e.target.id))} variant="warning" size="lg">
+                                        <i className="fas fa-plus"></i>
+                                </Button>
                                 </td>
                             </tr>
                         )}
