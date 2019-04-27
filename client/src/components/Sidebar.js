@@ -15,10 +15,15 @@ class Sidebar extends Component {
         }
     }
 
+    logout = () => {
+        document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
+        console.log(document.cookie);
+    }
+
     componentDidUpdate(prevProps, prevState) {
         console.log(this.props.user[0])
         if (prevProps.user[0] !== this.props.user[0]) {
-            this.setState({ userLoaded: true })
+            this.setState({ userLoaded: true });
         }
     }
 
@@ -35,6 +40,7 @@ class Sidebar extends Component {
                         <Button href="/workout/new" variant="warning" size="lg"><i className="fas fa-plus fa-fw"></i> New Workout</Button>
                         <Button href="/exercise/all" variant="warning" size="lg">View Exercises</Button>
                         <Button href="/exercise/new" variant="warning" size="lg"><i className="fas fa-plus fa-fw"></i> New Exercise</Button>
+                        <Button href="/" variant="danger" size="lg" onClick={this.logout}>Log Out</Button>
                     </ButtonGroup>
                 </Card.Body>
                 </div>
