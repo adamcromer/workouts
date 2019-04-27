@@ -29,7 +29,7 @@ class WorkoutForm extends Component {
         if (form.checkValidity() === false) {
             event.stopPropagation();
         }
-        this.setState({validated: true}, this.newWorkout());
+        this.setState({ validated: true }, this.newWorkout());
     }
 
     newWorkout = () => {
@@ -40,7 +40,7 @@ class WorkoutForm extends Component {
             description: this.state.description,
             difficulty: this.state.difficulty
         }).then(() => {
-            console.log("Saved new Workout");
+            this.props.history.push('/workout/all');
         }).catch(err => console.log(err));
     }
 
@@ -56,7 +56,7 @@ class WorkoutForm extends Component {
                             <Form noValidate
                                 validated={validated}
                                 onChange={this.handleInputChange}
-                                onSubmit={e => this.handleSubmit(e)}className="workout-form-padding">
+                                onSubmit={e => this.handleSubmit(e)} className="workout-form-padding">
                                 <Form.Group controlId="title">
                                     <Form.Label>Title</Form.Label>
                                     <Form.Control as="textarea" rows="1" name="title" />
