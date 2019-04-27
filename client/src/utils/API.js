@@ -9,10 +9,14 @@ export default {
         return axios.get('api/exercise/' + id);
     },
     getAllWorkouts: function() {
-        return axios.get('/api/workouts');
+        return axios.get('/api/workout');
+    },
+    getWorkoutsByUser: function(userWorkoutIds) {
+        console.log(userWorkoutIds);
+        return axios.get('/api/workout/find', userWorkoutIds)
     },
     getOneWorkout: function(id) {
-        return axios.get('api/workout/' + id);
+        return axios.get('/api/workout/' + id);
     },
     findUser: function(userEmail) {
         return axios.get('/api/user/' + userEmail);

@@ -57,4 +57,5 @@ class AllWorkouts extends Component {
         );
     }
 }
+
 export default AllWorkouts;
