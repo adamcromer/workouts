@@ -8,6 +8,9 @@ import AllWorkouts from "../components/AllWorkouts";
 import Container from 'react-bootstrap/Container';
 import ExerciseForm from '../components/ExerciseForm';
 import WorkoutForm from '../components/WorkoutForm';
+import ExerciseSearch from '../components/ExerciseSearch';
+import WorkoutSearch from '../components/WorkoutSearch';
+
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
@@ -55,7 +58,13 @@ class Workout extends Component {
                                     <Route exact path="/exercise/all" 
                                     render={(props) => <AllExercises {...props} 
                                     user={this.state.user} />} />
-                                    <Route exact path="/workout/all" 
+                                    <Route exact path="/exercise/search" 
+                                    render={(props) => <ExerciseSearch {...props} 
+                                    user={this.state.user} />} />
+                                    <Route exact path="/workout/search" 
+                                    render={(props) => <WorkoutSearch {...props} 
+                                    user={this.state.user} />} />
+                                    <Route
                                     render={(props) => <AllWorkouts {...props} 
                                     user={this.state.user} />} />
                                 </Switch>

@@ -35,11 +35,25 @@ class Sidebar extends Component {
                 }</Card.Header>
                 <Card.Body>
                     <ButtonGroup vertical style={{ width: '100%' }}>
-                        <Button href="/workout/all" variant="warning" size="lg">View Workouts</Button>
-                        <Button href="/workout/new" variant="warning" size="lg"><i className="fas fa-plus fa-fw"></i> New Workout</Button>
-                        <Button href="/exercise/all" variant="warning" size="lg">View Exercises</Button>
-                        <Button href="/exercise/new" variant="warning" size="lg"><i className="fas fa-plus fa-fw"></i> New Exercise</Button>
-                        <Button href="/" variant="danger" size="lg" onClick={this.logout}>Log Out</Button>
+                        <Button href="/workout/all" variant="warning" size="lg">
+                            <i className="fas fa-eye fa-fw"></i> View Workouts
+                        </Button>
+                        <Button href="/workout/new" variant="warning" size="lg">
+                            <i className="fas fa-plus fa-fw"></i> New Workout
+                        </Button>
+                        <Button href="/workout/search" variant="warning" size="lg">
+                            <i className="fas fa-search"></i> Find Workouts
+                        </Button>
+                        <Button href="/exercise/all" variant="warning" size="lg">
+                            <i className="fas fa-eye fa-fw"></i> View Exercises
+                        </Button>
+                        <Button href="/exercise/search" variant="warning" size="lg">
+                            <i className="fas fa-search"></i> Find Exercises
+                        </Button>
+                        <Button href="/exercise/new" variant="warning" size="lg">
+                            <i className="fas fa-plus fa-fw"></i> New Exercise
+                        </Button>
+                        <Button href="/" variant="outline-warning" size="lg" onClick={this.logout}>Log Out</Button>
                     </ButtonGroup>
                 </Card.Body>
                 </div>
