@@ -4,7 +4,7 @@ module.exports = {
   findAll: function(req, res) {
     db.Workout
         .find(req.query)
-        .sort({ popularity: -1 })
+        .sort({ _id: -1 })
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
   },
@@ -14,11 +14,13 @@ module.exports = {
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
   },
-  findByTitle: function(req, res) {
+  findByTitle: function (req, res) {
+    let regexTerm = new RegExp(req.params.term, 'i')
+    console.log(regexTerm);
     db.Workout
-        .find({ title: /req.query/i })
-        .then(dbModel => res.json(dbModel))
-        .catch(err => res.status(422).json(err));
+      .find({ title: regexTerm })
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
   },
   findByTime: function(req, res) {
     db.Workout
