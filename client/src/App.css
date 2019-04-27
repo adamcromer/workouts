@@ -17,6 +17,10 @@ nav {
   float: left !important;
 }
 
+.navbar-brand>a {
+  float: left !important;
+}
+
 .brand-name {
   display: inline-flex;
 }
