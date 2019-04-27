@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
+// import React, { Component } from 'react';
 
-import About from '../components/About';
+// import About from '../components/About';
 
-class Landing extends Component {
+// class Landing extends Component {
 
-    render() {
-        return (
-            <About />
-        )
-    }
+//     render() {
+//         return (
+//             <About />
+//         )
+//     }
 
-}
+// }
 
-export default Landing;
+// export default Landing;

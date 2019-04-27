@@ -1,18 +1,18 @@
-import React from 'react';
+// import React from 'react';
 
-import Container from 'react-bootstrap/Container';
+// import Container from 'react-bootstrap/Container';
 
-function Body(props) {
+// function Body(props) {
     
-    return (
+//     return (
 
-        <div>
-            <Container>
-                {props.children}
-            </Container>
-        </div>
+//         <div>
+//             <Container>
+//                 {props.children}
+//             </Container>
+//         </div>
 
-    );
-}
+//     );
+// }
 
-export default Body;
+// export default Body;
