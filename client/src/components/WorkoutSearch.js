@@ -13,7 +13,8 @@ class WorkoutSearch extends Component {
         super(props);
         this.state = {
             searchTerm: '',
-            workouts: []
+            workouts: [],
+            workoutId: ''
         };
     }
 
@@ -40,6 +41,18 @@ class WorkoutSearch extends Component {
             .catch(err => console.log(err));
     }
 
+    addToUser = (workoutId) => {
+        console.log('user', this.props.user[0]._id);
+        console.log('workout', workoutId);
+        API.addWorkoutToUser(this.props.user[0]._id, {
+            id: workoutId
+        })
+        .then(() =>
+            console.log('Added to User')
+        )
+        .catch(err => console.log(err));
+    }
+
     render() {
 
         return (
@@ -61,6 +74,7 @@ class WorkoutSearch extends Component {
                                         <th>Title</th>
                                         <th>Description</th>
                                         <th>Difficulty</th>
+                                        <th>Save</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -69,11 +83,18 @@ class WorkoutSearch extends Component {
                                             <td>{workout.title}</td>
                                             <td>{workout.description}</td>
                                             <td>{workout.difficulty}</td>
+                                            <td>
+                                            <Button
+                                                id={workout._id}
+                                                onClick={e => this.setState({ modalShow: true, selectedWorkout: e.target.id }, this.addToUser(e.target.id))} variant="warning" size="lg">
+                                                <i className="fas fa-plus"></i>
+                                            </Button>
+                                            </td>
                                         </tr>
-                                    ) : 
-                                    (<tr><td colspan="3" style={{ textAlign: 'center' }}>
-                                        <Spinner animation="border" variant="warning" />
-                                    </td></tr>)}
+                                    ) :
+                                        (<tr><td colspan="4" style={{ textAlign: 'center' }}>
+                                            <Spinner animation="border" variant="warning" />
+                                        </td></tr>)}
                                 </tbody>
                             </Table>
 

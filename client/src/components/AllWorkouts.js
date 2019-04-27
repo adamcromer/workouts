@@ -62,7 +62,7 @@ class AllWorkouts extends Component {
                                     id={workout._id} 
                                     onClick={e => this.setState({ modalShow: true, selectedWorkout: e.target.id }, this.addToUser(e.target.id))} variant="warning" size="lg">
                                         <i className="fas fa-plus"></i>
-                                    </Button>
+                                </Button>
                                 </td>
                             </tr>
                         )}
