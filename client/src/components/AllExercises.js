@@ -11,7 +11,6 @@ class AllExercises extends Component {
 
     componentDidMount = () => {
         this.loadExercises();
-        console.log(this.state);
     }
 
     loadExercises = () => {
@@ -27,7 +26,7 @@ class AllExercises extends Component {
     render() {
         return (
             <div className="list">
-                <h1>List of All Workouts</h1>
+                <h1>Exercises</h1>
                 <Table striped bordered hover variant="dark">
                     <thead>
                         <tr>
@@ -38,7 +37,7 @@ class AllExercises extends Component {
                             <th>Length</th>
                             <th>Target</th>
                             <th>Tags</th>
-                            <th>View</th>
+                            {/* <th>View</th> */}
                         </tr>
                     </thead>
                     <tbody>
@@ -51,9 +50,9 @@ class AllExercises extends Component {
                                 <td>{exercise.length}</td>
                                 <td>{(exercise.target).join(", ")}</td>
                                 <td>{(exercise.tags).join(", ")}</td>
-                                <td>
-                                    <Button href={`/exercise/${exercise._id}`}variant="warning" size="lg"><i className="fas fa-eye"></i></Button>
-                                </td>
+                                {/* <td>
+                                    <Button href={`/exercise/${exercise._id}`} variant="warning" size="lg"><i className="fas fa-eye"></i></Button>
+                                </td> */}
                             </tr>
                         )}
                     </tbody>
