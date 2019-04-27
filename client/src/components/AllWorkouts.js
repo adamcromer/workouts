@@ -23,16 +23,15 @@ class AllWorkouts extends Component {
             .catch(err => console.log(err));
     }
 
-    addToWorkouts = (id) => {
-        console.log(id);
-    }
+    // addToUser = (id) => {
+    //     console.log(id);
+    // }
 
     render() {
         return (
             <div className="list">
-                <h1>List</h1>
-                List of Workouts
-                        <Table striped bordered hover variant="dark">
+                <h1>List of Workouts</h1>
+                <Table striped bordered hover variant="dark">
                     <thead>
                         <tr>
                             <th>Title</th>
@@ -48,7 +47,7 @@ class AllWorkouts extends Component {
                                 <td>{workout.description}</td>
                                 <td>{workout.difficulty}</td>
                                 <td>
-                                    <Button href={`/workouts/${workout._id}`} variant="warning" size="lg"><i className="fas fa-eye"></i></Button>
+                                    <Button href={`/workout/${workout._id}`} variant="warning" size="lg"><i className="fas fa-eye"></i></Button>
                                 </td>
                             </tr>
                         )}
@@ -58,4 +57,5 @@ class AllWorkouts extends Component {
         );
     }
 }
+
 export default AllWorkouts;
