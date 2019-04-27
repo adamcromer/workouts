@@ -17,11 +17,11 @@ class Nav extends Component {
 
   render() {
     return (
-      <Navbar bg="dark" variant="dark" expand="lg" fixed="top" style={{marginBot: 5}}>
+      <Navbar bg="dark" variant="dark" expand="lg" fixed="stick">
         <Container className="justify-content-center">
           <Navbar.Brand className = "brand-name">
           <a className = "navbar-brand" href="/">Workouts
-          <img className="nav-logo" alt="Workout Logo" src="/images/Workout-Favicon-Light.png" style={{width:55, marginTop: -5}} />
+          <img className="nav-logo" alt="Workout Logo" src="/images/Workout-Favicon-Light.png" style={{width:55, marginTop: -1}} />
           </a>
           </Navbar.Brand>
           {/* <div>
