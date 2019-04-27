@@ -19,7 +19,9 @@ const workoutSchema = new Schema({
     },
     difficulty: {
         type: Number,
-        trim: true
+        trim: true,
+        min: 1,
+        max: 5
     },
     duration: {
         type: Number,
