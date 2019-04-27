@@ -18,13 +18,13 @@ class About extends Component {
                 </Row>
                 <Row>
                     <div className="about-description">
-                        <h1 className="about-heading">Workouts</h1>
+                        <h1 className="about-heading">Workins</h1>
                         <hr />
-                        <h5>Workouts helps you organize exercises you’ve created, enjoy, and work well for your body.</h5>
+                        <h5>Workins helps you organize exercises you’ve created, enjoy, and work well for your body.</h5>
                         <br />
-                        <h5>Minimal equipment is used with Workouts allowing you to easily squeeze exercise into your daily schedule and reach your overall fitness goals.</h5> 
+                        <h5>Minimal equipment is used with Workins allowing you to easily squeeze exercise into your daily schedule and reach your overall fitness goals.</h5> 
                         <br />
-                        <h5>Enjoy exercising the way you like with Workouts!</h5>
+                        <h5>Enjoy exercising the way you like with Workins!</h5>
                         </div>
                     </Row>
                     <div className="cards">
@@ -64,7 +64,7 @@ class About extends Component {
                     <Card className="bg-dark text-white">
                         <Card.Img className="image-footer" src="/images/workoutrun.jpg" alt="Card image" />
                         <Card.ImgOverlay>
-                            <Card.Title><h1>Join Workouts and Get Moving</h1></Card.Title>
+                            <Card.Title><h1>Join Workins and Get Moving</h1></Card.Title>
                             <br />
                             <Button href="/signup" variant="warning">Sign Up Now</Button>
                         </Card.ImgOverlay>

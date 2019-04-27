@@ -54,7 +54,7 @@ class SignUp extends Component {
             <div className="signup">
                 <Container className = "signup-container">
                 <Card bg="dark" text="white">
-                <Card.Header variant = "dark" as="h2">Sign Up for Workouts</Card.Header>
+                <Card.Header variant = "dark" as="h2">Sign Up for Workins</Card.Header>
                 <Card.Body>
                     <Form
                         noValidate
