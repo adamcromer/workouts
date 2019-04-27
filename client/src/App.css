@@ -7,13 +7,17 @@ nav {
 .navbar-brand {
   display: flex;
   align-items: center;
-  padding-top: 3em;
+  padding-top: 0;
   font-weight: 700;
 }
 
 .navbar-brand>img {
   display: flex;
   padding: 5px 15px;
+  float: left !important;
+}
+
+.navbar-brand>a {
   float: left !important;
 }
 

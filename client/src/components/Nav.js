@@ -17,11 +17,12 @@ class Nav extends Component {
 
   render() {
     return (
-      <Navbar bg="dark" variant="dark" expand="lg" fixed="sticky">
+      <Navbar bg="dark" variant="dark" expand="lg" fixed="stick">
         <Container className="justify-content-center">
           <Navbar.Brand className = "brand-name">
-          <a className = "navbar-brand" href="/">Workins
+          <a className = "navbar-brand" href="/">
           <img className="nav-logo" alt="Workout Logo" src="/images/Workout-Favicon-Light.png" style={{width:55, marginTop: -5}} />
+          Workins
           </a>
           </Navbar.Brand>
           {/* <div>
@@ -40,4 +41,3 @@ class Nav extends Component {
 }
 
 export default Nav;
-
