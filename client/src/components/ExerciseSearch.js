@@ -31,7 +31,7 @@ class ExerciseSearch extends Component {
     }
 
     searchForTerm = (term) => {
-        API.searchExercises(term)  
+        API.searchExercises(term)
             .then(res =>
                 this.setState({
                     exercises: res.data
@@ -51,7 +51,7 @@ class ExerciseSearch extends Component {
                             <Form inline
                                 onChange={this.handleInputChange}
                                 className="mb-2">
-                                <Form.Control type="text" name="searchTerm" placeholder="Search" className="mr-sm-2" style={{ width: 'calc(75% - 0.5rem)' }}/>
+                                <Form.Control type="text" name="searchTerm" placeholder="Search" className="mr-sm-2" style={{ width: 'calc(75% - 0.5rem)' }} />
                                 <Button variant="warning" onClick={this.handleSubmit} style={{ width: '25%' }}>Search</Button>
                             </Form>
 
@@ -79,10 +79,10 @@ class ExerciseSearch extends Component {
                                             <td>{(exercise.target).join(", ")}</td>
                                             <td>{(exercise.tags).join(", ")}</td>
                                         </tr>
-                                    ) : 
-                                    (<tr><td colspan="5" style={{ textAlign: 'center' }}>
-                                        <Spinner animation="border" variant="warning" />
-                                    </td></tr>)}
+                                    ) :
+                                        (<tr><td colspan="5" style={{ textAlign: 'center' }}>
+                                            <Spinner animation="border" variant="warning" />
+                                        </td></tr>)}
                                 </tbody>
                             </Table>
 

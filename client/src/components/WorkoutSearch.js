@@ -70,10 +70,10 @@ class WorkoutSearch extends Component {
                                             <td>{workout.description}</td>
                                             <td>{workout.difficulty}</td>
                                         </tr>
-                                    ) : 
-                                    (<tr><td colspan="3" style={{ textAlign: 'center' }}>
-                                        <Spinner animation="border" variant="warning" />
-                                    </td></tr>)}
+                                    ) :
+                                        (<tr><td colspan="3" style={{ textAlign: 'center' }}>
+                                            <Spinner animation="border" variant="warning" />
+                                        </td></tr>)}
                                 </tbody>
                             </Table>
 
