@@ -39,17 +39,21 @@ nav {
 .about {
   display: flex;
   justify-content: center;
-  margin: 0px;
+  margin: 0 auto;
 }
 .about-heading {
   color: #ffbb33;
   text-align: center;
+  margin: 0 auto;
+
 }
 .about-description {
   color:black;
   text-align: center;
   padding-left: 75px;
   padding-right: 75px;
+  margin: 0 auto;
+
 }
 hr {
   background-color: white; height: 3px; border: 0; 
